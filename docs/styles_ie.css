@@ -1,0 +1,409 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*special google fonts import*/
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+
+/* basic text styles */
+
+h1 {
+	font-family: 'Muli', sans-serif;
+	color: black;
+	font-size: 30px;
+	font-weight: bold;
+	padding: 10px;
+}
+h2 {
+	font-family: 'Muli', sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 10px;
+	text-align: left;
+}
+h3 {
+	font-family: 'Muli', sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+}
+h4 {
+	font-size: 18px;
+	font-weight: normal;
+	text-align: left;
+	font-style: italic;
+	margin: 15px 0px 5px 15px;
+}
+p {
+	font-family: 'Muli', sans-serif;
+	text-align: justify;
+}
+body {
+	overflow-y: scroll;	
+}
+footer {
+  	height: 60px;
+	background-color: #fff; /*f5f5f5*/
+	border-top: 1px solid #303030;
+}
+
+/* list syles */
+
+ul {
+	font-family: 'Muli', sans-serif;
+	padding: 0;
+    list-style-type: none;
+}
+li {
+	font-family: inherit;
+	margin: 0px 0px 12px 0px;
+}
+
+/* navigation bar/menu styles */
+
+.title {
+	margin: 20px 0px 0px 0px;
+}
+.navbar, .navbar-default{
+	background-color: white;
+	border-bottom: thin solid;
+	border-bottom-color: white;
+}
+.logoOuter {
+	margin: 0px 0px 0px -15px;
+}
+.logo {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	height: 80px; 
+    width: auto;
+}
+.subTitle {
+	margin: 18px 0px 0px -11px;
+}
+#myNavbar {
+	margin-top: 10px;
+}
+#lang {
+	font-weight: normal;
+}
+
+
+
+
+/* TEAM BIOS */
+
+.bioImage {
+	width: 100%;
+	height: 250px;
+	background-color: #D3D3D3;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.bioTextFrame {
+	width: 100%;
+	display: none;
+	text-align: justify;
+}
+.caption {
+	font-size: 12px;
+	font-style: italic;
+	margin: 5px 0px 10px 5px;
+}
+
+#ribeiro{
+	background: url('../images/bios/ribeiro.jpg');
+	background-repeat: no-repeat;
+	background-size: 275px;
+}
+#zschocke{
+	background: url('../images/bios/zschocke.jpg');
+	background-repeat: no-repeat;
+	background-size: 275px;
+}
+#alavez{
+	background: url('../images/bios/alavez.jpg');
+	background-repeat: no-repeat;
+	background-size: 275px;
+}
+#shaw{
+	background: url('../images/bios/shaw.jpg');
+	background-repeat: no-repeat;
+	background-size: 275px;
+}
+#wang{
+	background: url('../images/bios/wang.jpg');
+	background-repeat: no-repeat;
+	background-size: 275px;
+}
+#novkovic{
+	background: url('../images/bios/novkovic.jpg');
+	background-repeat: no-repeat;
+	background-size: 275px;
+}
+#caquard{
+	background: url('../images/bios/caquard.jpg');
+	background-repeat: no-repeat;
+	background-size: 275px;
+}
+#honarmand{
+	background: url('../images/bios/honarmand.jpg');
+	background-repeat: no-repeat;
+	background-size: 275px;
+}
+#mcgurk{
+	background: url('../images/bios/mcgurk.jpg');
+	background-repeat: no-repeat;
+	background-size: 275px;
+}
+#dimitrovas {
+	background: url('../images/bios/dimitrovas.jpg');
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+
+/* past members */
+
+#naud{
+	background: url('../images/bios/naud.jpg');
+	background-repeat: no-repeat;
+	background-size: 300px;
+}
+#chan{
+	background: url('../images/bios/default.jpg');
+	background-repeat: no-repeat;
+	background-size: 275px;
+}
+#yang{
+	background: url('../images/bios/default.jpg');
+	background-repeat: no-repeat;
+	background-size: 275px;
+}
+#gregory{
+	background: url('../images/bios/default.jpg');
+	background-repeat: no-repeat;
+	background-size: 275px;
+}
+
+
+
+
+
+
+/* PROJECTS (INDEX PAGE) */
+
+/* project gallery structure */
+
+.galleryFrame {
+	height: 400px;
+	width: 102%;
+	float: left;
+	overflow-x: auto;
+	overflow-y: hidden;
+	position: relative;
+	z-index:1000;
+}
+.projectGallery {
+	height: 100%;
+	width: 2900px;
+	float: left;
+}
+.projects {
+	float: left;
+	margin: 6px;
+	width: 300px;
+	height: 90%;
+	text-align: center;
+	border-top: thick solid transparent;
+}
+.projectImage {
+	display: block;
+	float: left;
+	margin: 2%;
+	width: 96%;
+	height: 80%;
+	cursor: pointer;
+	overflow: hidden;
+	border-radius: 5px;
+}
+.projectsText {
+	font-family: 'Muli', sans-serif;
+	display: block;
+	text-align: center;
+	vertical-align: center;
+	font-weight: normal;
+	font-size: 16px;
+	margin: 0% 2% 2% 2%;
+	height: 28%;
+}
+.projectsDate {
+	font-family: 'Muli', sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	display: block;
+	text-align: center;
+	vertical-align: text-bottom;
+	margin-top: 80%;
+}
+#project1 {
+	margin-left: 20px;
+}
+
+.projectPageImage {
+	width: 100%;
+	height: auto;
+	border-radius: 5px;
+}
+
+
+/* individual project photo styles */
+
+
+#fieldwork {
+	background-color: #D3D3D3;
+	background: url('../images/projects/fieldwork/fieldwork.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+#lifestories {
+	background-color: #D3D3D3;
+	background: url('../images/projects/mapping_refugee_life_stories/world_mentions.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+#mappaStory {
+	background-color: #D3D3D3;
+	background: url('../images/projects/mappa_story/stamen_mtl.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto 115%;
+}
+#residential {
+	background-color: #D3D3D3;
+	background: url('../images/projects/mapping_residential_schools/cover_photo.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto 110%;
+}
+#circuits {
+	background-color: #D3D3D3;
+	background: url('../images/projects/circuits_of_cinema/usa.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+#cicada {
+	background-color: #D3D3D3;
+	background: url('../images/projects/cicada/cicada_map2.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+#territories {
+	background-color: #D3D3D3;
+	background: url('../images/projects/mapping_cinematographic_territories/15movies.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+#geoweb {
+	background-color: #D3D3D3;
+	background: url('../images/projects/distance_teaching_the_geoweb/img.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;		
+}
+#huron {
+	background-color: #D3D3D3;
+	background: url('../images/projects/lake_huron_treaty_atlas/conceptmap.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+
+
+
+/* PROJECT PAGES */
+
+/* lifestory project images */
+.bioImage1 {
+	width: 100%;
+	height: 100%;
+	background-color: #D3D3D3;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+/* Project page arrow navigation */
+
+.prev {
+	font-size: 9em;
+	display: inline;
+	float: left;
+}
+
+.nex {
+	font-size: 9em;
+	float: right;
+}
+
+.projectTitle {
+	display: inline-block;
+	width: 75%;
+	text-align: center;
+}
+
+@media screen and (min-width: 767px) {
+    .projectTitle {
+        margin: 35px;
+    }
+}
+
+
+/* PUBLICATIONS Page sections */
+
+.pageSections {
+	padding-top: 100px;
+	margin-top: -80px
+}
+
+
+
+
+
+/* OTHER */
+
+/* javascript, jsquery / interactive function classes */
+
+.collapsables {
+	cursor: pointer;
+	opacity: 0.95;
+}
+
+
+/* widgets (twitter, leaflet) */
+
+.twitter-timeline {
+	opacity: 0.9;
+}
+
+#mapid {
+	height: 700px;
+	width: 100%;
+}
+
+/* formatting whitespace */
+
+
+.spacer {
+	height: 100px;
+}
+.spacer2 {
+	height: 50px;
+}
+
+
+
+
+

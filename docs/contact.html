@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>geomedia lab</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../images/logos/waterman_favicon_blue.ico">
+
+	<!-- STYLES -->
+	
+    <!-- bootstrap styles -->
+	<link href="../bootstrap_files/css/bootstrap.min.css" rel="stylesheet" type='text/css'>
+	<!-- jquery styles, just in case -->
+	<link rel="stylesheet" href="../jquery-ui-1.12.1/jquery-ui.css">
+	<!-- link to leaflet styles -->
+	<link rel="stylesheet" type="text/css" href="../leaflet/leaflet.css" />
+	<!-- custom css styles -->
+	<link href="styles.css" rel='stylesheet' type='text/css'>
+	
+	<!-- FUNCTIONS -->
+	
+	<!-- jquery scripts -->
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<!-- bootstrap scripts -->
+    <script src="../bootstrap_files/js/bootstrap.min.js"></script>
+	<!-- link to leaflet scripts -->
+	<script type="text/javascript" src="../leaflet/leaflet.js"></script>
+	<!-- custom js and jquery scripts -->
+	<script src="functions.js"></script>
+	
+  </head>
+  
+  
+  <body id="body">
+	
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			
+			<div class="navbar-header">
+				
+				<!-- menu button appears when on tablet or phone or small screen -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+		      	</button>
+      			<!-- navbar title -->
+				<h1 class="navbar-text navbar-left title"><a class="navbar-link" href="index.html">GEOMEDIA LAB</a></h1>
+				<!-- logo -->
+				<a class="navbar-left logoOuter" href="index.html"><img class="logo navbar-left hidden-md hidden-sm hidden-xs" alt="" src="../images/logos/07_3_Waterman_croppedTransparent.png"></a>
+				<!-- Con U, MTL -->
+				<h2 class="navbar-text navbar-left hidden-sm hidden-xs hidden-md subTitle"><a href="http://www.concordia.ca/" target="_blank" class="navbar-link">Concordia University</a><br/>Montreal</h2>
+			</div>
+			
+			<!-- menu items collapsable into button -->
+<div class="collapse navbar-collapse navbar-right" id="myNavbar">
+    <!-- menu items -->
+    <h3 class="navbar-text"><a class="navbar-link" href="team.html">Team</a></h3>
+    <h3 class="navbar-text"><a class="navbar-link" href="publications.html">Publications</a></h3>
+    <h3 class="navbar-text"><a class="navbar-link" href="contact.html">Contact</a></h3>
+</div>
+
+		</div>
+	</nav>
+		
+	<!-- main page -->
+	<div class="container">
+	    
+	    <div class="spacer"></div>
+	    
+	    <div class="row text-center">
+		
+			<div id="mapid"></div>
+				        
+	        <!-- map functionality -->
+	        <script>
+				//initialize map
+				var mymap = L.map('mapid', { zoomControl: false, scrollWheelZoom: false }).setView([45.50, -73.575], 14);
+				
+				//function take from http://gis.stackexchange.com/questions/111887/leaflet-mouse-wheel-zoom-only-after-click-on-map/210712#210712
+				mymap.once('focus', function() { mymap.scrollWheelZoom.enable(); });
+				
+				//basemap tile layer load
+				L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+				    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+				    maxZoom: 17,
+					minZoom: 10,
+				}).addTo(mymap);
+				//add marker with contact info
+				var marker = L.marker([45.497315, -73.578822]).addTo(mymap);
+				marker.bindPopup("<p><span class='glyphicon glyphicon-phone-alt'></span>&nbsp;&nbsp;&nbsp;(514) 848-2424 ext. 2052<br/><span class='glyphicon glyphicon-envelope'></span>&nbsp;&nbsp;&nbsp;sebastien.caquard@concordia.ca</br></br>H-1260, Henry F. Hall Building<br/>1455 de Maisonneuve West<br/>Montreal, QC H3G-1M8 Canada</p>").openPopup();
+			</script>
+			
+		</div><!-- end row -->
+        
+        <div class="spacer2"></div>
+		
+	</div><!-- end container -->
+	
+	<footer class="navbar-static-bottom">
+		<div class="container">
+			<p class="text-muted navbar-text navbar-left">Geomedia Lab</p>	
+			<p class="text-muted navbar-text navbar-right" style="padding-right: 20px">Logo by <a href="http://juliamia.ch/index_en" target="_blank">+JuliaMia Grafik+</a><br>Website by <a href="https://twitter.com/EmoryShaw" target="_blank">Emory Shaw</a></p>
+		</div>
+	</footer>
+	
+	</body>
+ 
+</html>

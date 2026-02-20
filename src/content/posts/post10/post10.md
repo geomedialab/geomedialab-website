@@ -1,6 +1,0 @@
----
-title: 'Atlascine at the CAG-CCA Conference'
-date: '2025-05-23'
----
-
-Several projects developed with Atlascine were presented at the joint annual conference of the Canadian Association of geographers and Canadian Cartographic Association that took place in Ottawa this week. Kelley Ann O'Rourke presented the [Histories of Saint-Colomban Cemetery](https://rs-atlascine.concordia.ca/saint-colomban/index.html?module=module.stories) atlas, Lea Kabiljo presentend the [Tell Me about Riopelle](https://rs-atlascine.concordia.ca/riopelle/index.html) atlas, Sepideh Shahamati presentend the [Intangible Heritage of Parc-Extension](https://rs-atlascine.concordia.ca/parcextension/index.html) atlas, and Cameron Brubacher presented his maps of historical Quebecois novels (not available to the public for copyright reasons).

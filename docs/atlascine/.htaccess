@@ -1,0 +1,7 @@
+
+RewriteEngine on
+DirectoryIndex index.html
+RewriteCond %{HTTP_HOST} ^atlascine\.geomedialab\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.atlascine\.geomedialab\.org$
+RewriteRule ^/?$ "https\:\/\/geomedialab\.org\/atlascine\.html" [R=301,L]
+

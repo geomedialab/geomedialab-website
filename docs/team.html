@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>geomedia lab</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../images/logos/waterman_favicon_blue.ico">
+
+	<!-- STYLES -->
+
+    <!-- bootstrap styles -->
+	<link href="../bootstrap_files/css/bootstrap.min.css" rel="stylesheet" type='text/css'>
+	<!-- jquery styles, just in case -->
+	<link rel="stylesheet" href="../jquery-ui-1.12.1/jquery-ui.css">
+	<!-- custom css styles -->
+	<link href="styles.css" rel='stylesheet' type='text/css'>
+
+	<!-- FUNCTIONS -->
+
+	<!-- jquery scripts -->
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<!-- bootstrap scripts -->
+    <script src="../bootstrap_files/js/bootstrap.min.js"></script>
+	<!-- custom js and jquery scripts -->
+	<script src="functions.js"></script>
+
+  </head>
+
+
+  <body id="body">
+
+	<!-- NAVBAR -->
+
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+
+			<div class="navbar-header">
+
+				<!-- menu button appears when on tablet or phone or small screen -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+		      	</button>
+
+      			<!-- navbar title -->
+				<h1 class="navbar-text navbar-left title fade-items"><a class="navbar-link" href="index.html">GEOMEDIA LAB</a></h1>
+				<!-- logo -->
+				<a class="navbar-left logoOuter fade-items" href="index.html"><img class="logo navbar-left hidden-md hidden-sm hidden-xs" alt="" src="../images/logos/07_3_Waterman_croppedTransparent.png"></a>
+				<!-- Con U, MTL -->
+				<h2 class="navbar-text navbar-left hidden-sm hidden-xs hidden-md subTitle fade-items"><a href="http://www.concordia.ca/" target="_blank" class="navbar-link">Concordia University</a><br/>Montreal</h2>
+			</div>
+
+			<!-- menu items collapsable into button -->
+<div class="collapse navbar-collapse navbar-right" id="myNavbar">
+    <!-- menu items -->
+    <h3 class="navbar-text"><a class="navbar-link" href="team.html">Team</a></h3>
+    <h3 class="navbar-text"><a class="navbar-link" href="publications.html">Publications</a></h3>
+    <h3 class="navbar-text"><a class="navbar-link" href="contact.html">Contact</a></h3>
+</div>
+
+		</div>
+	</nav>
+
+	<!-- MAIN PAGE -->
+	<div class="container">
+	    <!-- buffer -->
+	    <div class="spacer"></div>
+
+		<!-- begin bios section -->
+		<div class="row bios">
+
+
+		<!-- TO ADD A BIO FOR THE CURRENT MEMBERS SECTION -->
+			<!--1. choose a column in which you want to add a bio
+				2. copy an existing bio (i.e. all code btwn the comment containing the last name and the following name comment)
+				3. paste in the column of your choice
+				Now you need to change the textual content of this bio...
+				4. within the h3 tag, change the name to that of the individual who's profile you are making
+				5. paste their bio description within the p tag
+				Now you need to change the photo
+				6. replace the id string in quotations with the individual's last name
+				This id links to a specific class in the CSS stylesheet that you will also label with this same last name
+				7. open styles.css
+				8. under the TEAM BIOS section, copy an existing id selector (i.e. #ribeiro) and everything in the following parentheses
+				9. paste it anywhere in the same section
+				10. change the id (#id) to the name you used in step 6
+				11. replace the filepath in the url parentheses with the path to the .jpg file of the new individual. (This photo needs to be added to images/bios folder path)
+				12. save both team.html and styles.css and test to see if everything works -->
+
+			<!-- column 1 -->
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 col-xl-3">
+
+				<!-- Caquard -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/SCaquard.JPG'); background-size: 275px; background-position: 50% 25%;" alt="Bio Image"></div>
+					<h3>Sébastien Caquard</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Sébastien Caquard is an <a href="http://www.concordia.ca/faculty/sebastien-caquard.html" target="_blank">associate professor</a> in the department of Geography, Planning and Environment at Concordia University (Montréal). His research lies at the intersection of mapping, technologies and the humanities. In his current research, he seeks to explore how maps can help to better understand the complex relationships that exist between places and narratives. This research involves the mapping of a range of fictional and real stories, which include cinematographic ones, as well as the life stories of refugees and indigenous peoples. As the director of the Geomedia lab, he has led the development of an <a href="http://www.atlascine.org" target="_blank">online narrative mapping application</a>, and he is involved in a variety of exciting projects that require alternative ways of thinking cartographically. He is also the chair of the Commission on <a href="http://artcarto.wordpress.com/" target="_blank">Art and Cartography</a> of the International Cartographic Association (ICA).</p>
+				</div>
+
+        <!--Baumann-->
+        <div class="collapsables">
+          <div class="projectPageImage" style="background: url('../images/bios/Baumann.jpg'); background-size: 250px; background-position: 50% 25%;" alt="Bio Image"></div>
+          <h3>Yannick Baumann</h3>
+        </div>
+        <div class="bioTextFrame caption">
+          <p>Yannick is a PhD student at Université de Montréal's Geography Department in co-direction with the Geomedia Lab at Concordia University. Drawing on participative and activist methodologies, his PhD research focuses on the potential of (digital) data and (digital) tools to foster community relations and to support housing struggles. His primary interests are housing justice, financialization of housing, data activism, and alternative cartographies. Outside academia, Yannick likes to spend time in protests and code (even though he's still a novice). He also has two cats named Achille and Chlore.</p>
+        </div>
+
+<!-- Brubacher -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/Brubacher.jpg'); background-size: 250px; background-position: 50% 25%" alt="Bio Image"></div>
+					<h3>Cameron Brubacher</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Cameron is currently pursuing an MSc in Geography at Concordia University. His research revolves around literary geography, the digital humanities, web-mapping, and Québécois literature. He is interested in exploring the ways in which fictional/historical depictions of real cities affect how we perceive these urban spaces, and in developing new methods of analysing and visualising this relationship. During a BA in Urban Planning, he completed an honours thesis project mapping the emotional geography of a small selection of novels set in Montréal, using the narrative mapping platform Atlascine. After briefly getting some professional experience in urban planning, he has returned to begin a Masters, pivoting towards using natural language processing and other machine learning tools for further research in this field.</p>
+				</div>
+     
+			</div><!-- end column -->
+
+			<!-- column 2 -->
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 col-xl-3">
+
+				<!-- Shaw -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/shaw.jpg'); background-size: 250px; background-position: 50% 25%" alt="Bio Image"></div>
+					<h3>Emory Shaw</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Emory finished his BA in Urban Systems at McGill University and has been an active member of the Geomedia Lab throughout his MSc at Concordia University. Emory is interested in people’s geographic imaginaries. Firstly in how they are influenced by personal mobility, social ties and media-exposure and, second, how these spatial imaginaries are performed on social media platforms and through oral narratives. By mapping such communicated imaginaries, he hopes to better understand the plurality of perspectives that shape conceptions of place. His thesis work applies this framework to representations of public spaces in Montreal found on Twitter. Since 2015, he has also been an active contributor to the Geomedia Lab’s ongoing project on mapping migrant oral life stories.</p>
+				</div>
+
+        <!-- Pindivic -->
+        <div class="collapsables">
+          <div class="projectPageImage" style="background: url('../images/bios/pinvidic.jpg'); background-size: 250px; background-position: 50% 25%; " alt="Bio Image"></div>
+          <h3>Kévin Pinvidic</h3>
+        </div>
+        <div class="bioTextFrame caption">
+          <p>Kevin Pinvidic is a multidisciplinary artist based in Tiohtiá:ke/Montreal. His process focuses on the experience of the city and its appropriation by its citizens through the lens of urban planning. First encompassing painting and drawing, Pinvidic repurposed architectural representations such as plans, models or digital softwares to transpose his own wandering in the city. During his MFA, he then pushed the idea of the whole city as his own studio, which gave shape to scenographies where residual matters and theatre elements, such as lights and projections, were assembled in site-specific works. Pinvidic now explores the multiple crossroads between scenography, urban studies, geography, and computation arts in a performative and collaborative method with citizens. For this purpose, he joined the Geomedia Lab to add collective and participative mapping (tools and methodology) to his performative exploration of the city. Trained in design and architecture (Ecole Boulle, Paris, 2008, National School of Architecture of Versailles, 2010), Pinvidic has then graduated with a Master of Fine Arts from UQÀM university in 2015. He is currently a Ph.D candidate at Concordia University (INDI program). Complementary to his artistic practice, Pinvidic collaborates in creation research groups and works in the field of scenography for performing arts. </p>
+        </div>
+
+<!-- Clapperton-Richard -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/Clapperton-Richard.jpg'); background-size: 250px; background-position: 50% 25%" alt="Bio Image"></div>
+					<h3>Adèle Clapperton-Richard</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Adèle Clapperton-Richard (they/she) is a postdoctoral fellow in the Department of Geography, Planning, and Environment at Concordia University and lecturer in the Département de géographie at Université Laval. Their current research focuses on Indigenous territorialities, extractive industrial developments, resurgence, and participatory and narrative mapping. Their postdoctoral project aims to reflect on cartographic representations of the entanglements of colonial landscapes with Indigenous cultural landscapes, by mapping the memories and emotions surrounding significant places that have disappeared or been transformed in the Nitassinan (ilnu ancestral territory) of Pessamit. They also combine their illustration practice—ink, watercolor, digital drawing—with their professional projects by diffusing academic knowledge through creative and graphic projects. </p>
+				</div>
+     
+		
+
+			</div><!-- end column -->
+			
+
+			<!-- column 3 -->
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 col-xl-3">
+
+				<!-- Shahamati -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/shahamati.jpg'); background-size: 275px; background-position: 50% 25%" alt="Bio Image"></div>
+					<h3>Sepideh Shahamati</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Sepideh Shahamati is a postdoctoral fellow in the Department of Communication at the University of Montreal, and a member of the Anti-Eviction Mapping Project in Parc-Extension and the Geomedia Lab at Concordia University. Her research explores the intersections of gentrification, storytelling, and cartography, with a particular focus on how personal narratives and memories can be used to map the broader impacts of gentrification and displacement. In her postdoctoral work, she examines the lived experiences of gentrification among residents of the Parc-Extension neighborhood in Montreal, with an emphasis on identifying displacement trajectories and the psychological impacts of gentrification. This research builds on her doctoral studies in the Department of Geography, Planning and Environment at Concordia University, where she focused on mapping the intangible heritage of Parc-Extension through narrative mapping.</p>
+				</div>
+
+<!-- Thao Vy Nguyen -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/nguyen.jpg'); background-size: 250px; background-position: 50% 25%" alt="Bio Image"></div>
+					<h3>Annie Thao Vy Nguyen</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Annie Thao Vy Nguyen (they/she) is a MSc student in Geography and Urban Studies at Concordia University, with a focus on queer geography. Using oral history, their thesis examines the changing geographies of queer Asian activism in Montreal, focusing on the shifting relationship between queer Asian activists, Chinatown, and the Gay Village, over time. Through this, Annie aims to document and investigate broader shifts in queer Asian activist histories across generations. Trained in Architecture and Philocreation dialogue facilitation, Annie curated and facilitated the oral history exhibition and program “Bodies Carrying: Traces & Stories” at the Centre for Oral History and Digital Storytelling, where they are now a core member. <a href="http://annietvn.hotglue.me" target="_blank">+</a></p>
+				</div>
+<!-- Monjezi -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/Monjezi.jpg'); background-size: 250px; background-position: 50% 25%" alt="Bio Image"></div>
+					<h3>Daria Monjezi-Kochak</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Daria Monjezi-Kochak is completing an Honours BA in Human Geography and First Peoples Studies at Concordia University. Her research, supervised by Dr. Sébastien Caquard and in collaboration with Dr. Tracie Barnett, explores how alternative mapping methods can be used to visualize relationships between the built environment, social networks, and health outcomes. Drawing on qualitative interview data and geospatial analysis, Daria’s work examines how urban design and park accessibility shape health and well-being in Montreal. Her broader interests include Indigenous land relations, environmental protection and conservation, and the role of outdoor education in fostering environmental awareness. Having spent her summers teaching at the Royal Botanical Gardens in Hamilton, Ontario, Daria is passionate about connecting people, especially young learners, to land-based knowledge and ecological stewardship.</p>
+				</div>
+				  
+			</div><!-- end column -->
+
+<!-- column 4 -->
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 col-xl-3">
+
+<!--Denieul-->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/denieul.jpg'); background-size: 250px; background-position: 50% 25%" alt="Bio Image"></div>
+					<h3>Léa Denieul Pinsky</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Léa Denieul-Pinsky works with Kanehsata'kehró:non Land Defenders to make maps and other data-driven visualizations for various projects including but not limited to land dispossession, illegal waste dumping and locating unmarked graves of children having attended religious institutions in Quebec. She is particularly interested in repatriating state-sanctioned colonial materials and repurposing them as “counter-archives” to support political change. After having completed her Ph.D at Concordia University in the Geography Department, she now works at the Institut National de la Recherche Scientique (INRS) as a post doc.</p>
+				</div>	
+
+<!-- Dimitrovas -->
+        <div class="collapsables">
+          <div class="projectPageImage" style="background: url('../images/bios/Dimitrovas.jpg'); background-size: 250px; background-position: 50% 25%" alt="Bio Image"></div>
+          <h3>Stefanie Dimitrovas</h3>
+        </div>
+        <div class="bioTextFrame caption">
+          <p>Stefanie is a nature enthusiast, artist and mother, pursuing her masters at Concordia University. She returns to the lab after a 7-year hiatus, working as a guide and educator for kids in the nature connection as well as unschooling movements. Building off of her work in narrative and affective cartography during her honors undergrad and research work for Dr. Caquard, her research-creation thesis centers on mapping as a potential self-discovery practice for revealing the ways our selves and bodies relate to our surroundings. She is particularly curious about mapping relationships to non-human beings, landforms and weather. She will also be assisting in Dr. Caquard's SSHRC-funded project "(Re)tracer la mémoire cartographique".</p>
+        </div>
+
+<!-- Chanut -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/Chanut.jpg'); background-size: 250px; background-position: 50% 25%" alt="Bio Image"></div>
+					<h3>Laurence Chanut</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Laurence (she/they) is a graduate student exploring the intersections of human geography, music, and culture. Drawing from her experience as a DJ and dancer, she investigates how the evolution of dance music can be mapped prior to the digital era. Her work bridges geography, media studies, sound design, and ethnomusicology, aiming to create an interactive visualization that connects the public with the histories of movement and sound.</p>
+				</div>
+
+			</div><!-- end column -->
+
+		</div><!-- end row -->
+	
+		<div class="spacer"></div>	
+<div class="spacer"></div>
+<div class="spacer"></div>
+
+		<div class="row text-center">
+			<h3>Past Members</h3>
+			<hr>
+		</div>
+
+
+
+<!-- past members -->
+		<div class="row bios">
+
+            
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 col-xl-3">
+
+<!--Lusson-->
+        <div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/lusson.jpg'); background-size: 400px; background-position: 50% 25%" alt="Bio Image"></div>
+          <h3>Flandrine Lusson</h3>
+        </div>
+        <div class="bioTextFrame caption">
+          <p>Flandrine is a PhD student in urban studies at the INRS, in Montréal, since 2020. Before that, she studied in urban planning, geography, urban and environmental sociology, and she developed a large interest on maps as tool for urban planning as well as collaborative process of reflection on territorial dynamics. Her subject of thesis concerns the long-term impacts of memory of expropriations on the construction of territorial identities. She is working on the Mirabel Airport case and she's using emotional and interpretative maps to understand these impacts.</p>
+        </div>		
+
+ <!-- Bengle -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/bengle.jpg'); background-size: 400px; background-position: 50% 25%" alt="Bio Image"></div>
+					<h3>Sarah Bengle</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Sarah Bengle is a spatial designer (UQÀM 2017) and a current graduate student in Geography (Concordia 2023) with a background in Art History (UdeM 2013). Their research deals with utopian geographies, social economy and notions of commons. Previously, Sarah was a co-founder of Dimanche Design, worked in the Quebec film industry and was a project manager at Architecture Without Borders Québec. Their Master’s research looks at alternatives mode of city making through a research-creation project anchored in a transitional urban planning project in Montréal.</p>
+				</div>
+
+<!-- Olmedo -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/olmedo.jpg'); background-size: 400px; background-position: 50% 25%" alt="Bio Image"></div>
+					<h3>Elise Olmedo</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Elise Olmedo is a Post-doctoral Researcher at the department of geography, planning and environment at Concordia University. She defended her Ph.D. in Geography in 2015 at Université Paris 1 Panthéon Sorbonne. The topic of her thesis centers on the ability of cartography and mapping to represent the world of emotions, sensations and affective atmospheres, which are usually left behind by classical maps. Her current work deals with theoretical and empirical practices to develop the concept of sensibility mapping ("Cartographie sensible" in French) as a research-creation tool based on a processual approach. Far from the representation of a unique fixed space, this methodology offers an evolving point of view on places more adapted to geographical perceptions and subjectivity through a dialogue between graphics and experience.
+professor Sébastien Caquard supervises her current Banting project (2019-2021). Its goal is to develop and implement a subjective-narrative cartography to complement the Atlascine software. In order to do so, this project focuses on the representation of memories of Rwandan exiles. Concretely, this research is based on 31 narratives of Tutsi genocide survivors compiled at the Centre d'Histoire Oral et de Récits Numérisés (CHORN) at Concordia University.</p>
+				</div>
+		<!-- Novkovic -->
+        <div class="collapsables">
+          <div class="projectPageImage" style="background: url('../images/bios/novkovic.jpg'); background-size: 275px;" alt="Bio Image"></div>
+          <h3>Anja Novkovic</h3>
+        </div>
+        <div class="bioTextFrame caption">
+          <p>Anja graduated from Simon Fraser University with a Bachelor of Arts in Social Anthropology in 2012. Upon graduation, she focused her energy on storytelling—spoken word poetry performance and personal story collection as an affiliate researcher of the Centre for Oral History and Digital Storytelling. She began her Master of Science in Geography, Urban and Environmental Studies in 2016, with a desire to uncover the intimate construction of public spaces. Her thesis work centres on the collection and exposure of personal stories from three downtown Montreal alleyways through mapping and installation art.</p>
+        </div>
+			
+				<!-- Lavorel -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/lavorel.jpg'); background-size: 275px;" alt="Bio Image"></div>
+					<h3>Marie Lavorel</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Dr. Marie Lavorel holds a Ph.D in Museology, Mediation &amp; Heritage from Université du Québec à Montréal
+					(UQÀM) and Information et Communication Sciences from Université d’Avignon et des pays de Vaucluse in
+					France. Her research focuses on the making of Heritage from sensitive and traumatic memories, the writing of
+					contemporary history, oral history, contemporary art and dance, public art and contemporary architecture. She is
+					interested in creative processes and media writing of memory, heritage, exhibition and art. Moreover, Dr. Lavorel is
+					interested in the collaborative dimension of these processes and the commitment of the actors involved. She also
+					studies the way knowledge is publicized through new digital and interactive platforms. At McGill University, she has
+					recently completed a postdoctoral research on public art in hospitals. She is now preparing an exhibition that will
+					combine contemporary dance and media arts in an interactive installation. At the same time, she accompanies
+					contemporary artists through writing and curatorial projects. She is also a freelance curator and teaches Museology at
+					UQÀM. She is currently Postdoctoral Fellow at Concordia University (COHDS and Geomedialab) where she is
+					centrally involved into the development of the Living Archives of the Rwandan exiles and Genocide Survivors in
+					Canada.</p>
+				</div>
+				
+			</div><!-- end column -->
+
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 col-xl-3">
+
+<!-- O'Rourke -->
+        <div class="collapsables">
+          <div class="projectPageImage" style="background: url('../images/bios/ORourke.jpg'); background-size: 400px; background-position: 50% 25%; " alt="Bio Image"></div>
+          <h3>Kelley O'Rourke</h3>
+        </div>
+        <div class="bioTextFrame caption">
+          <p>Born in Montreal, she completed her BA at Concordia University and her Landscape Design certificate at Guelph University. She is currently working on her MSc at Concordia University in Geography, Urban and Environmental Studies. She is a semi-retired Landscape Designer after many years of working on both commercial and residential properties.
+She is passionate about history and volunteers her time to community programs aimed at protecting and promoting history, whether it is researching for a project for the McCord Museum, interviewing for a documentary or fundraising for family history societies, it is a contribution she considers invaluable for future generations. As a member of the St. Columban Irish, she was part of a team of volunteers who worked tirelessly to raise funds to restore an Irish cemetery containing many broken headstones, some dating back to 1826.
+She has served in many volunteer capacities, such as coach, manager, and fundraiser in local sport and educational institutions with an aim to provide opportunities for kids to flourish.
+She sits on the Board of Directors of the Montreal Irish Monument Park Foundation whose mission is to build a beautiful world-class memorial park and cultural green space at the Montreal side of Victoria Bridge, around the site of the Black Rock.
+Kelley continues to actively pursue her passions and is president of the Canadian Irish Migration Preservation Network, whose mission is to research and promote Irish Heritage in Canada and abroad and to create a dynamic network of groups and individuals with similar goals. </p>
+        </div>
+
+				<!-- Alavez -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/alavez.jpg'); background-size: 275px;" alt="Bio Image"></div>
+					<h3>José Alavez</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>José is a Ph.D. student at Concordia University’s Geography, Urban, and Environmental Department. Drawing on new cartographic theories and practices such as Deep Mapping, his Ph.D. research focuses on studying the stories of individuals who experienced death in the context of migration.  He proposes that Deep Maps through the mobilization of multiple analytical and artistic displays can help understand that death is not the end of a story, but the beginning and extension of many others. Additionally, José holds a BA in Human Geography from The Metropolitan Autonomous University in Mexico City and a Master's degree in Geomatics from CONACYT’s Research Centre of Geospatial Information. His previous academic work includes the study of everyday geographies and domestic spaces of homeless in Mexico City and new approaches to link Arts and Humanities with Cartography.</p>
+				</div>
+			 <!-- McGurk -->
+        <div class="collapsables">
+          <div class="projectPageImage" style="background: url('../images/bios/mcgurk.jpg'); background-size: 275px;" alt="Bio Image"></div>
+          <h3>Tom McGurk</h3>
+        </div>
+        <div class="bioTextFrame caption">
+          <p>My current work is an investigation of on-line mapping (cybercartography) and its use by Indigenous peoples in the Canadian context. More specifically it examines how on-line mapping fits into narratives related to colonialization and counter mapping practices to understand what impact it may have on bridging gaps between Western and Indigenous systems of knowledge. The quantitative aspect of the work is an audit and evaluation of websites related to Indigenous mapping projects framed by the works of scholars of decolonialized methodologies. In addition to the audit my work includes interviews with Indigenous peoples involved in mapping projects, scholars, technicians, and cartographers to explore the qualitative aspects of on-line Indigenous mapping projects.</p>
+        </div>
+		
+		<!-- Gregory -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/gregory.jpg'); background-size: 275px;" alt="Bio Image"></div>
+					<h3>Julia Gregory</h3>
+					
+				</div>
+				  <!-- Honarmand -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/honarmand.jpg'); background-size: 275px;" alt="Bio Image"></div>
+					<h3>Fatemeh Honarmand</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Montréal, Québec has the second-largest visible minority population in Canada at 20.3% of its population (or 760,000 people) (Statcan 2011).  Despite this, “Quebec visible minorities… have for long been relatively invisible in Quebec film” (Iordanova, Martin-Jones, and Vidal 2010, 132). Outside of what is acknowledged as an “acute lack of representation” in movies (Marx, 2012), the few attempts by directors to portray people of colour in films feed particular discourses and stereotypes of minorities in Québec Cinéma. Through analysis of a selection of Quebec films, I am examining different forms of stereotypes of people of colour.  My research will examine ways in which these stereotypes promote common misrepresentations and discourses about this population.</p>
+				</div>
+				
+
+			</div><!-- end column -->
+
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 col-xl-3">
+
+			<!-- Drouet-->
+        <div class="collapsables">
+          <div class="projectPageImage" style="background: url('../images/bios/drt.jpg'); background-size: 275px;" alt="Bio Image"></div>
+          <h3>Maryne Drouet</h3>
+        </div>
+        <div class="bioTextFrame caption">
+          <p>Born and raised in Madagascar, Maryne has lived in Québec for the past eight years. Growing up with three cultures while speaking different languages and traveling to more than 35 countries have cultivated her passion for global environmental issues. After a
+        Bachelor in Sustainable Development and Project Management, she has worked two years within an environmental consulting firm. She collaborated closely with environmental geographers in Guinea Conakry to develop community resilience tools, as
+        well as Northern Québec Cree people for environmental site assessments (Phase I). Currently doing a Master of Environment at Concordia University, her main interests are participatory mapping projects and the role of open source spatial technologies (OSM,QGIS) to solve environmental and social issues. She has also developed a strong interest in remote sensing technologies as she has started a group project about the impacts of specific pesticides on watersheds in Québec (with the use of TerrSet and R). Being part of the Geomedia Lab allows her to reflect on practices related to mapping, as community or story-telling mapping among other emerging concepts. </p>
+        </div>
+
+				<!-- Ribeiro -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/ribeiro.jpg'); background-size: 275px;" alt="Bio Image"></div>
+					<h3>Daniel Melo Ribeiro</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>PhD Student in Communication and Semiotics (PUC-SP). MSc in Digital Design (PUC-SP), PGDip in Information Management (UFMG) and BSc in Communications (UFMG). Member of the Peirce’s Studies International Center (CIEP/PUC-SP). Academic visitor at Geomedia Lab at Concordia University in Montréal/CA. Professional experience in knowledge management, interface design, information architecture and usability. Research interests: data visualization, information design, semiotics and cartography. Find him <a href="https://twitter.com/danielmelo" target="_blank">@danielmelo</a>, his <a href="http://www.danielmelo.net/" target="_blank">website</a> and on <a href="https://pucsp.academia.edu/DanielMeloRibeiro" target="_blank">Academia.edu</a></p>
+				</div>
+
+       <!-- Ng-Chan -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/default.jpg'); background-size: 275px;" alt="Bio Image"></div>
+					<h3>Taien Ng-Chan</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Taien Ng-Chan is a multidisciplinary writer, artist and scholar in the Ph.D. in Humanities at Concordia University.  Her research investigates everyday city life through cinema, cartography, poetry and documentary, specifically the poetics of mapping and the aesthetics of urban mobility. Taien’s website project, <a href="http://agencetopo.qc.ca/detours/" target="_blank">Detours: Poetics of the City</a>, involved collaboration to produce site-specific digital works for interactive artist maps of Montréal, including videos to watch while riding public transit. <a href="http://soyfishmedia.com/maps--media.html" target="_blank">(See Maps & Media)</a></p>
+				</div>
+<!-- Zschocke -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/zschocke.jpg'); background-size: 275px;" alt="Bio Image"></div>
+					<h3>Julian Zschocke</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p><i>The world is shaped by two things — stories told and the memories they leave behind.</i></br> ― Vera Nazarian</br></br>Julian Zschocke finished his B.A. in media studies at the Philipps University, Marburg in 2014. His thesis focused on transmedia storytelling. While volunteering in Uganda in 2015, he published his first essay on video gaming entitled “New super retro Mario Bros.” in the book Retro Games und Retro-Gaming. Nowadays he is working part-time in as a scriptwriter in a german filmproduction. Zschocke is also currently enrolled in the program ‘M.A. Human Geography: Globalization, media and culture’ at the Johannes Gutenberg University, Mainz. As a media geographer his main research interest is examining how fictional content can be able to shape the real world.</p>
+				</div>
+
+<!-- Gonzalès -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/gonzales.jpg'); background-size: 400px; background-position: 50% 25%" alt="Bio Image"></div>
+					<h3>Rodolphe Gonzalès</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Rodolphe Gonzalès is a postdoctoral fellow at Concordia University’s Department of Geography and Centre for Oral History and Digital Storytelling (COHDS). After a M.Sc. (Geography, Université de Montréal, 2009) in interactive spatio-temporal visualisation, a Ph.D. (Geography, Université de Montréal, 2016) in network theory, and a postdoctoral fellowship in the same field (University of British Columbia, 2017), his current focus is on developing an online, interactive application to allow the exploration of Rwandan genocide survivors’ life stories. This project builds upon the COHDS’ Stories Matter database as well as Sébastien Caquard’s work on narrative mapping (atlascineproject.wordpress.com), and aims at providing ways to seamlessly interact between multimedia contents and their representations in space and time. Rodolphe also has an interest in visual, interactive media creation, including video game, animation and film-making.</p>
+				</div>
+
+			</div><!-- end column -->
+
+
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 col-xl-3">
+
+			
+		<!--Parish-->
+        <div class="collapsables">
+          <div class="projectPageImage" style="background: url('../images/bios/parish.jpg'); background-size: 275px;" alt="Bio Image"></div>
+          <h3>Annita Parish</h3>
+        </div>
+        <div class="bioTextFrame caption">
+          <p>Annita finished her BA in Urban Development at Sheikh Bahaei University of Isfahan and graduated from Imam Khomeini International University of Iran with a master of urban design in 2012. In her master, she focused on “Designing Pedestrian Zone in the Historical Centers of Isfahan”. Currently, she is an MSc student in the Department of Geography, Urban and Environmental Studies at Concordia University to follow her interests in urban stories, different techniques in visualization and mapping methods. In her thesis, she has concentrated on Montreal Flaneurs’ production and stories to create an atlas of the city through flanerie perspective.</p>
+        </div>
+				<!-- Wang-->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/wang.jpg'); background-size: 275px;" alt="Bio Image"></div>
+					<h3>Mo Wang</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Mo Wang did her Bachelor's at Sun Yat-sen University, China, and is pursuing her Master’s degree at Concordia University. Her academic interest aims to relate VGI with public health with a specific focus on studying the potential in tracking the spread of epidemic disease by using location names mentioned in the social media. In this way, she is focusing on the corelationship between Twitter place names and the Zika virus outbreak. She is also interested in geoparsing technologies.</p>
+				</div>
+
+
+				<!-- Stirnemann -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/stirnemann.jpg'); background-size: 275px;" alt="Bio Image"></div>
+					<h3>Julia Mia Stirnemann</h3>
+					</div>
+					<div class="bioTextFrame caption">
+					<p>Julia Mia is freethinking and not bound to any specific location. The world is upside down, angles are challenged and the status quo is questioned. Main point of interest are worldmaps and worldviews. This research into world maps is being conducted in collaboration with various universities and across different disciplines. Current research includes running a research project and engaging in the scholarly discourse by publishing articles in specialist journals and by participating in conferences. It is in this context that software for generating unconventional world maps was created (<a href="http://www.worldmapgenerator.com/" target="_blank">WorldMapGenerator.com</a>). After much thinking and inventing, Julia Mia passed her doctoral exams in 2016.</p>
+				</div>
+				<!-- Yang -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/default.jpg'); background-size: 275px;" alt="Bio Image"></div>
+					<h3>Mengquian Yang</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>With the development of the web 2.0, more and more geospatial data are generated via social media. This segment of what is now called “big data” can be used to further study human spatial behaviors and practices. My project aims to explore different ways of extracting geodata from social media in order to contribute to the growing body of literature interested in studying the potential of the geoweb for human geography. More specifically, my project focuses on the potential of social media to study a growing tourism phenomenon: set-jetting. Set-jetting refers to the activity whereby people travel to visit shooting locations that appear in movies. The case study focuses on the Mansfield Reformatory (Ohio, US) which was used as the shooting location for the film Shawshank Redemption (Dir. Frank Darabont, 1994). Through the analysis of georeferenced data mined from Twitter, Flickr, and Tripadvisor, my project presents and discusses the differences and similarities between the use of these three platforms by set-jetters to share and access geodata associated with an alternative tourist destination. It also provides an overview of the spatial movements of the tourists visiting these places at both global and local scales. The spatial movements of these set-jetters is then analyzed to better understand how different social media can be used to track human mobility.</p>
+				</div>
+
+				 <!-- Naud -->
+				<div class="collapsables">
+					<div class="projectPageImage" style="background: url('../images/bios/naud.jpg'); background-size: 275px;" alt="Bio Image"></div>
+					<h3>Daniel Naud</h3>
+				</div>
+				<div class="bioTextFrame caption">
+					<p>Daniel Naud is currently a postdoctoral fellow at the Research Center on Aging, affiliated to the University of Sherbrooke (Canada), collaborating on the development of the Social Participation Potential Index, aimed at improving health and quality of life of the aging populations. Daniel Naud completed a PhD in cultural geography at the University of Montreal, Canada. He taught Geographic Information Systems and Quantitative Research Methods at Concordia University, Montreal.</p>
+				</div>
+        
+
+			</div><!-- end column -->
+
+		</div><!-- end row -->
+
+        <div class="spacer2"></div>
+
+	</div><!-- end container -->
+
+	<footer class="navbar-static-bottom">
+		<div class="container">
+			<p class="text-muted navbar-text navbar-left">Geomedia Lab</p>
+			<p class="text-muted navbar-text navbar-right" style="padding-right: 20px">Logo by <a href="http://juliamia.ch/index_en" target="_blank">+JuliaMia Grafik+</a><br>Website by <a href="https://twitter.com/EmoryShaw" target="_blank">Emory Shaw</a></p>
+		</div>
+	</footer>
+
+	</body>
+
+</html>
