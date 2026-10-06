@@ -1,45 +1,25 @@
-console.log('JS loaded');
+document.addEventListener('DOMContentLoaded', function () {
+    // mobile menu: the header carries the open/closed state, CSS does the rest
+    const header = document.querySelector('.site-header');
+    document.getElementById('open').addEventListener('click', () => header.classList.add('nav-open'));
+    document.getElementById('close').addEventListener('click', () => header.classList.remove('nav-open'));
 
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded');
-
-    const open = document.getElementById('open');
-    const close = document.getElementById('close');
-    const navitems = document.querySelectorAll('.nav-item');
-
-    open.addEventListener('click', function() {
-        navitems.forEach((navitem) => {
-            navitem.style.display = '';
-            navitem.style.opacity = '1';
-        });
-        open.style.display = 'none';
-        close.style.display = 'flex';
-    });
-
-    close.addEventListener('click', function() {
-    navitems.forEach((navitem) => {
-        navitem.style.display = 'none';
-        navitem.style.opacity = '0';
-    });
-    open.style.display = 'flex';
-    close.style.display = 'none';
-    });
-
-    // when user clicks on anchor-link, scroll to the heading
-    const anchorLinks = document.querySelectorAll('.heading-wrapper');
-    anchorLinks.forEach((anchorLink) => {
-        anchorLink.addEventListener('click', function(event) {
+    // heading anchor links: smooth-scroll and keep the hash in the URL
+    document.querySelectorAll('.heading-wrapper').forEach((wrapper) => {
+        wrapper.addEventListener('click', function (event) {
+            const link = wrapper.querySelector('a.anchor');
+            if (!link || event.target.closest('a') !== link) return;
             event.preventDefault();
-            const hashId = anchorLink.lastChild.href;
-            const heading = document.getElementById(hashId.split('#')[1]);
-            heading.scrollIntoView({ behavior: 'smooth' });
-            // append hashId to the URL
-            window.history.pushState(null, null, hashId);
+            document.getElementById(link.hash.slice(1)).scrollIntoView({ behavior: 'smooth' });
+            history.pushState(null, '', link.hash);
         });
     });
-    document.querySelectorAll('a').forEach(function(link) {
-        if (link.hostname !== window.location.hostname) {
+
+    // external links open in a new tab
+    document.querySelectorAll('a[href]').forEach(function (link) {
+        if (link.hostname && link.hostname !== window.location.hostname) {
             link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener');
         }
     });
 });
