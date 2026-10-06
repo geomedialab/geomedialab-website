@@ -1,0 +1,16 @@
+---
+layout: base.html
+---
+<div class="page team">
+	<h1>{{ title }}</h1>
+	{% if content | striptags | trim %}<div class="prose">{{ content | safe }}</div>{% endif %}
+	{% set people = collections.team | forLang(lang) %}
+	<h2>Current members</h2>
+	<div class="people-grid">
+		{% for person in people %}{% if person.data.status != "alumni" %}{% include 'person-card.html' %}{% endif %}{% endfor %}
+	</div>
+	<h2>Past members</h2>
+	<div class="people-grid">
+		{% for person in people %}{% if person.data.status == "alumni" %}{% include 'person-card.html' %}{% endif %}{% endfor %}
+	</div>
+</div>

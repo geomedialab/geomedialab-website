@@ -78,12 +78,45 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("formatDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toISODate();
   });
+  eleventyConfig.addFilter("longDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('d LLLL yyyy');
+  });
+
+  // items with an `order` field come first (ascending), the rest keep date order
+  const byOrder = (items) => [...items].sort((a, b) => (a.data.order ?? 1e9) - (b.data.order ?? 1e9));
+  eleventyConfig.addFilter("byOrder", byOrder);
+  // items in this language, plus untranslated items from the other one (core rule)
+  eleventyConfig.addFilter("forLang", (items, lang) =>
+    (items || []).filter((p) => p.data.lang === lang || p.data.translationKey === false)
+  );
+  eleventyConfig.addFilter("head", (items, n) => (n ? items.slice(0, n) : items));
+
+  // project gallery: everything tagged projects, minus `gallery: false`
+  eleventyConfig.addCollection("gallery", (api) =>
+    byOrder(api.getFilteredByTag("projects").filter((p) => p.data.gallery !== false))
+  );
+  eleventyConfig.addCollection("team", (api) => byOrder(api.getFilteredByTag("people")));
+
+  // Old geomedialab.org/*.html URLs -> wherever that content lives now.
+  // src/_data/legacyRedirects.json names a content folder, not a URL, so the
+  // stub keeps pointing at the right page when an editor retitles it.
+  eleventyConfig.addCollection("legacyRedirects", (api) => {
+    const all = api.getAll();
+    const list = all[0]?.data.legacyRedirects || [];
+    return list.map(({ from, folder }) => {
+      const target = all.find((p) => p.inputPath.includes(`/content/${folder}/`));
+      if (!target) throw new Error(`legacyRedirects: nothing in src/content/${folder}/`);
+      return { from, to: target.url };
+    });
+  });
 
   eleventyConfig.addPassthroughCopy("src/imgs/");//add folders to public
   eleventyConfig.addPassthroughCopy("src/attachments/");
   eleventyConfig.addPassthroughCopy("src/js/");
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("src/admin/");
+  eleventyConfig.ignores.add("src/admin/**"); // copied as-is, not rendered as a page
+  eleventyConfig.addPassthroughCopy("src/favicon.ico");
   //eleventyConfig.addPassthroughCopy({ "content/index.en.md": "/index.md" });
   
   //eleventyConfig.addGlobalData("langs", ['en', 'fr']);

@@ -1,30 +1,29 @@
-<script async type="text/javascript" src="/js/tile-gallery.js" defer></script>
-
-<div class="tile-gallery">
-{% for p in collections.all %}
-{% if p.data.tags and p.data.tags.includes('projects') %}
-    {% if p.data.lang == lang or (p.data.lang != lang and p.data.translationKey == false) %}
-        {% if p.data.redirect %}
-        <a href="{{ p.data.redirect }}" target="_blank">
-        {% else %}
-        <a href="{{ p.data.permalink }}">
-        {% endif %}
-            {% if p.data.img %}
-            <div class="zoom-in" style="background-image: url('{{ p.data.img }}');">
-            {% else %}
-            <div class="zoom-in" style="background-image: url('/imgs/black.png');">
-            {% endif %}
-                <div>
-                    <h1>{{ p.data.title | safe }}</h1>
-                    {% if p.data.description %}
-                    <p>{{ p.data.description | safe }}</p>
-                    {% else %}
-                    <p>{{ p.content | safe }}</p>
-                    {% endif %}
-                </div>
-            </div>
+{# Horizontal project strip. One card builder for every gallery on the site. #}
+<section class="project-gallery" aria-label="Projects">
+    <div class="gallery-head">
+        <h2>Projects</h2>
+        <div class="gallery-arrows">
+            <button type="button" data-dir="-1" aria-label="Scroll projects left">&lsaquo;</button>
+            <button type="button" data-dir="1" aria-label="Scroll projects right">&rsaquo;</button>
+        </div>
+    </div>
+    <div class="tile-gallery" tabindex="0">
+    {% for p in collections.gallery | forLang(lang) %}
+        <a class="project-card" href="{{ p.data.redirect or p.url }}">
+            <span class="project-card-img">
+                {% if p.data.img %}<img src="{{ p.data.img | replace(' ', '%20') }}" alt="" loading="lazy" style="object-position: {{ p.data.focus or '50% 50%' }}">{% endif %}
+            </span>
+            <span class="project-card-title">{{ p.data.title }}</span>
+            {% if p.data.years %}<span class="project-card-years">{{ p.data.years }}</span>{% endif %}
         </a>
-    {% endif %}
-{% endif %}
-{% endfor %}
-</div>
+    {% endfor %}
+    </div>
+</section>
+<script>
+    (function () {
+        const strip = document.currentScript.previousElementSibling.querySelector('.tile-gallery');
+        document.currentScript.previousElementSibling.querySelectorAll('.gallery-arrows button').forEach((b) =>
+            b.addEventListener('click', () => strip.scrollBy({ left: b.dataset.dir * strip.clientWidth * 0.8, behavior: 'smooth' }))
+        );
+    })();
+</script>

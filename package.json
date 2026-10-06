@@ -1,7 +1,7 @@
 {
-  "name": "atlascine-website",
+  "name": "geomedialab-website",
   "version": "1.0.0",
-  "description": "private test repository for managing websites on github",
+  "description": "geomedialab.org — Eleventy site with Sveltia CMS",
   "main": "index.js",
   "scripts": {
     "watch:eleventy": "eleventy --serve",
@@ -15,8 +15,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "luxon": "^3.7.2",
+    "markdown-it": "^15.0.2",
     "markdown-it-anchor": "^9.0.1",
-    "markdown-it-replace-link": "^1.2.0",
     "slugify": "^1.6.6"
   },
   "devDependencies": {

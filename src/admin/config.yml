@@ -1,85 +1,97 @@
 backend:
   name: github
-  repo: geomedialab/atlascine-website
+  repo: geomedialab/geomedialab-website
   branch: 11ty-site
 
 media_folder: /src/imgs
 public_folder: /imgs
-site_url: https://atlascine.org
+site_url: https://geomedialab.org
 locale: en
 
-# ─────────────────────────────────────────────────────────────
-# i18n: Sveltia CMS creates paired files per locale.
-# With omit_default_locale_from_file_path, EN files have no
-# suffix (.md) and FR files get .fr.md — matching the existing
-# eleventyComputed.js filename-based language detection.
-# ─────────────────────────────────────────────────────────────
-i18n:
-  structure: multiple_files
-  locales: [en, fr]
-  default_locale: en
-  omit_default_locale_from_file_path: true
+# English only for now. To add French later: add fr to site.languages in
+# src/_data/site.json, then uncomment this block and set `i18n: true` on each
+# collection (+ `i18n: true/duplicate` per field, as in atlascine-website).
+# i18n:
+#   structure: multiple_files
+#   locales: [en, fr]
+#   default_locale: en
+#   omit_default_locale_from_file_path: true
+#   initial_locales: default
+
+# Every folder collection uses `path: "{{slug}}/{{slug}}"` (one subfolder per
+# entry, which the 11ty side relies on), and therefore needs collection-level
+# absolute media paths — otherwise Sveltia saves uploads inside the entry folder,
+# where they are never published.
 
 collections:
 
   # ─────────────────────────────────────────────────────────────
-  # POSTS — Bilingual news posts (in subfolders)
-  # path template enables subdirectory file discovery.
-  # i18n creates paired EN/FR files in the same folder,
-  # which eleventyComputed.js auto-pairs as translations.
-  # ─────────────────────────────────────────────────────────────
-  - name: posts
-    label: "Posts / Articles"
-    label_singular: "Post / Article"
-    description: >
-      Bilingual posts. Each entry has EN + FR tabs.
-      Files are stored in subfolders for translation pairing.
-    folder: src/content/posts
-    create: true
-    path: "{{slug}}/{{slug}}"
-    # Store uploads in the global folder, not entry-relative subfolders.
-    # A path template makes Sveltia default media to the entry folder,
-    # so set absolute collection-level paths (leading slash = repo root).
-    media_folder: "/src/imgs"
-    public_folder: "/imgs"
-    i18n: true
-    extension: md
-    format: frontmatter
-    fields:
-      - { label: "Title / Titre", name: title, widget: string, i18n: true }
-      - { label: "Date", name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, i18n: duplicate }
-      - { label: "Description (link preview / aperçu du lien)", name: description, widget: text, required: false, i18n: true }
-      - { label: "Content / Contenu", name: body, widget: markdown, i18n: true }
-
-  # ─────────────────────────────────────────────────────────────
-  # PROJECTS — Atlas tiles on the Atlases page; each redirects
-  # to its atlas on rs-atlascine.concordia.ca
-  # ─────────────────────────────────────────────────────────────
   - name: projects
-    label: "Atlases / Atlas"
-    label_singular: "Atlas"
+    label: "Projects"
+    label_singular: "Project"
+    description: "Project pages. Each one appears as a card in the horizontal gallery on the home page."
     folder: src/content/projects
     create: true
     path: "{{slug}}/{{slug}}"
     media_folder: "/src/imgs"
     public_folder: "/imgs"
-    i18n: true
     extension: md
     format: frontmatter
+    sortable_fields: [order, title]
     fields:
-      - { label: "Title / Titre", name: title, widget: string, i18n: true }
-      - { label: "Atlas URL", name: redirect, widget: string, i18n: true, hint: "Link to the atlas on rs-atlascine.concordia.ca" }
-      - { label: "Tile image", name: img, widget: image, required: false, i18n: duplicate }
-      - { label: "Description", name: description, widget: text, required: false, i18n: true }
-      - { label: "Date", name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, i18n: duplicate, hint: "Oldest appears first in the gallery" }
-      - { label: "Content / Contenu", name: body, widget: markdown, required: false, i18n: true }
-      - { label: "permalink", name: permalink, widget: hidden, default: false, i18n: duplicate }
-      - { label: "tags", name: tags, widget: hidden, default: projects, i18n: duplicate }
+      - { label: "Title", name: title, widget: string }
+      - { label: "Years", name: years, widget: string, required: false, hint: "Shown under the gallery card, e.g. 2014-2021" }
+      - { label: "Cover image", name: img, widget: image, required: false, hint: "Gallery card image" }
+      - { label: "Cover focus", name: focus, widget: string, required: false, default: "50% 50%", hint: "Which part of the cover stays visible when cropped: horizontal then vertical. 50% 0% = top centre, 0% 50% = left" }
+      - { label: "Gallery position", name: order, widget: number, value_type: int, required: false, hint: "Lower numbers come first in the gallery (existing projects use 10, 20, 30…)" }
+      - { label: "Show in gallery", name: gallery, widget: boolean, default: true, required: false }
+      - { label: "External link (optional)", name: redirect, widget: string, required: false, hint: "If set, the gallery card links here instead of to this page" }
+      - { label: "Description (link preview)", name: description, widget: text, required: false }
+      - { label: "Content", name: body, widget: markdown, required: false }
 
   # ─────────────────────────────────────────────────────────────
-  # PAGES — Static content pages (bilingual, in subfolders)
-  # .njk template pages (atlases, news listing) are not
-  # managed here — only .md content pages.
+  - name: posts
+    label: "News"
+    label_singular: "News item"
+    description: "News items, newest first in the column under the project gallery. Can be just an image with a title, or a full text post."
+    folder: src/content/posts
+    create: true
+    path: "{{slug}}/{{slug}}"
+    media_folder: "/src/imgs"
+    public_folder: "/imgs"
+    extension: md
+    format: frontmatter
+    sortable_fields: [date, title]
+    fields:
+      - { label: "Title", name: title, widget: string }
+      - { label: "Date", name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Image (optional)", name: img, widget: image, required: false }
+      - { label: "Image description (for screen readers)", name: alt, widget: string, required: false }
+      - { label: "Description (link preview)", name: description, widget: text, required: false }
+      - { label: "Text (optional)", name: body, widget: markdown, required: false }
+
+  # ─────────────────────────────────────────────────────────────
+  - name: people
+    label: "Team"
+    label_singular: "Team member"
+    description: "People shown on the Team page."
+    folder: src/content/people
+    create: true
+    path: "{{slug}}/{{slug}}"
+    media_folder: "/src/imgs/people"
+    public_folder: "/imgs/people"
+    extension: md
+    format: frontmatter
+    sortable_fields: [order, title, status]
+    fields:
+      - { label: "Name", name: title, widget: string }
+      - { label: "Photo", name: photo, widget: image, required: false }
+      - { label: "Role", name: role, widget: string, required: false, hint: "e.g. PhD candidate, Director" }
+      - { label: "Status", name: status, widget: select, options: [current, alumni], default: current }
+      - { label: "Position", name: order, widget: number, value_type: int, required: false, hint: "Lower numbers come first" }
+      - { label: "Personal page (optional)", name: link, widget: string, required: false }
+      - { label: "Bio", name: body, widget: markdown, required: false }
+
   # ─────────────────────────────────────────────────────────────
   - name: pages
     label: "Pages"
@@ -89,19 +101,33 @@ collections:
     path: "{{slug}}/{{slug}}"
     media_folder: "/src/imgs"
     public_folder: "/imgs"
-    i18n: true
     extension: md
     format: frontmatter
     fields:
-      - { label: "Title / Titre", name: title, widget: string, i18n: true }
-      - { label: "Date", name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, required: false, i18n: duplicate }
-      - { label: "Description", name: description, widget: text, required: false, i18n: true }
-      - { label: "External link (optional)", name: redirect, widget: string, required: false, i18n: true, hint: "If set, menu links point here instead of to this page" }
+      - { label: "Title", name: title, widget: string }
       - label: "Layout"
         name: layout
         widget: select
-        options: [basic.html, basic_fullscrn.html, gallery.html, posts-overview.html]
+        options:
+          - { label: "Standard page", value: basic.html }
+          - { label: "Team (lists team members)", value: team.html }
+          - { label: "Contact (with map)", value: contact.html }
+          - { label: "News (lists all news)", value: posts-overview.html }
         default: basic.html
-        i18n: duplicate
-      - { label: "Tags", name: tags, widget: list, required: false, hint: "Ex: nav-items, index-pages", i18n: duplicate }
-      - { label: "Content / Contenu", name: body, widget: markdown, required: false, i18n: true }
+      - { label: "Menus", name: tags, widget: select, multiple: true, required: false, options: [{ label: "Top menu", value: nav-items }, { label: "Footer", value: index-pages }] }
+      - { label: "Menu position", name: order, widget: number, value_type: int, required: false, hint: "Lower numbers come first" }
+      - { label: "External link (optional)", name: redirect, widget: string, required: false, hint: "If set, menu links point here instead of to this page" }
+      - { label: "Description (link preview)", name: description, widget: text, required: false }
+      - { label: "Content", name: body, widget: markdown, required: false }
+
+  # ─────────────────────────────────────────────────────────────
+  - name: home
+    label: "Home page"
+    files:
+      - name: landing
+        label: "Home page text (About, Partnerships, Land acknowledgement)"
+        file: src/content/index.md
+        fields:
+          - { label: "Layout", name: layout, widget: hidden, default: landing.html }
+          - { label: "Title", name: title, widget: hidden, default: Home }
+          - { label: "Text", name: body, widget: markdown, hint: "Shown beside the news column, under the project gallery" }

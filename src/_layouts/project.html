@@ -1,0 +1,19 @@
+---
+layout: base.html
+---
+{% set prevProject = collections.gallery | getPreviousCollectionItem %}
+{% set nextProject = collections.gallery | getNextCollectionItem %}
+<article class="prose page project">
+	<header class="project-header">
+		<h1>{{ title }}</h1>
+		{% if years %}<p class="project-years">{{ years }}</p>{% endif %}
+		{% if redirect %}<p><a class="read-more" href="{{ redirect }}">Visit the project</a></p>{% endif %}
+	</header>
+	{{ content | main | safe }}
+</article>
+{% if prevProject or nextProject %}
+<nav class="project-pager" aria-label="More projects">
+	{% if prevProject %}<a rel="prev" href="{{ prevProject.url }}">&lsaquo; {{ prevProject.data.title }}</a>{% else %}<span></span>{% endif %}
+	{% if nextProject %}<a rel="next" href="{{ nextProject.url }}">{{ nextProject.data.title }} &rsaquo;</a>{% endif %}
+</nav>
+{% endif %}

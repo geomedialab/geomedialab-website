@@ -1,0 +1,14 @@
+{# One card per team member. Expects `person`. #}
+<article class="person-card">
+    <div class="person-photo">
+        {% if person.data.photo %}<img src="{{ person.data.photo | replace(' ', '%20') }}" alt="" loading="lazy">{% endif %}
+    </div>
+    <h3>{% if person.data.link %}<a href="{{ person.data.link }}">{{ person.data.title }}</a>{% else %}{{ person.data.title }}{% endif %}</h3>
+    {% if person.data.role %}<p class="person-role">{{ person.data.role }}</p>{% endif %}
+    {% if person.content | striptags | trim %}
+    <details>
+        <summary>Bio</summary>
+        {{ person.content | safe }}
+    </details>
+    {% endif %}
+</article>

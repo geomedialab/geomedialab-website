@@ -1,17 +1,12 @@
 ---
-# Old URLs of posts that moved into subfolders (required by the CMS); each gets a meta-refresh stub.
+# Meta-refresh stubs for URLs of the old hand-made site (team.html, cicada.html, …).
+# The list lives in src/_data/legacyRedirects.json; .eleventy.js resolves each
+# content folder to its current URL.
 pagination:
-  data: moved
+  data: collections.legacyRedirects
   size: 1
   alias: r
-moved:
-  - from: /en/atelier-dinitiation-a-lart-avec-atlascine/
-    to: /en/posts/atelier-dinitiation-a-lart-avec-atlascine/
-  - from: /en/upcoming-atlascine-events-in-april/
-    to: /en/posts/upcoming-atlascine-events-in-april/
-  - from: /en/nouvel-atlas-a-venir-latlas-des-paroles-de-femmes-oubliees/
-    to: /en/posts/nouvel-atlas-a-venir-latlas-des-paroles-de-femmes-oubliees/
-permalink: "{{ r.from }}index.html"
+permalink: "{% if r.from.endsWith('/') %}{{ r.from }}index.html{% else %}{{ r.from }}{% endif %}"
 eleventyExcludeFromCollections: true
 ---
 <!DOCTYPE html>

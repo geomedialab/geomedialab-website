@@ -1,0 +1,7 @@
+---
+title: "Mengquian Yang"
+photo: ""
+status: alumni
+order: 320
+---
+With the development of the web 2.0, more and more geospatial data are generated via social media. This segment of what is now called “big data” can be used to further study human spatial behaviors and practices. My project aims to explore different ways of extracting geodata from social media in order to contribute to the growing body of literature interested in studying the potential of the geoweb for human geography. More specifically, my project focuses on the potential of social media to study a growing tourism phenomenon: set-jetting. Set-jetting refers to the activity whereby people travel to visit shooting locations that appear in movies. The case study focuses on the Mansfield Reformatory (Ohio, US) which was used as the shooting location for the film Shawshank Redemption (Dir. Frank Darabont, 1994). Through the analysis of georeferenced data mined from Twitter, Flickr, and Tripadvisor, my project presents and discusses the differences and similarities between the use of these three platforms by set-jetters to share and access geodata associated with an alternative tourist destination. It also provides an overview of the spatial movements of the tourists visiting these places at both global and local scales. The spatial movements of these set-jetters is then analyzed to better understand how different social media can be used to track human mobility.

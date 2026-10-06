@@ -1,58 +1,41 @@
-# atlascine-website
+# geomedialab-website
 
-Contains files required to build the Atlascine website located at atlascine.org. Built using Eleventy and Nunjucks, with a custom build process to generate the site in more than one language. Redirect functionality based on [this code](https://gist.github.com/BrianMitchL/f93622a46f4476b7514995ff502d8d17).
+Source for [geomedialab.org](https://geomedialab.org), the website of the Geomedia Lab at Concordia University. Built with [Eleventy](https://www.11ty.dev/) and edited through [Sveltia CMS](https://github.com/sveltia/sveltia-cms) at [geomedialab.org/admin/](https://geomedialab.org/admin/). Every save in the admin panel is a commit to the `11ty-site` branch, which rebuilds and republishes the site in about a minute.
 
-## ✏️ Modifier le site via l'interface d'administration / Edit the site via the admin interface
+## Editing the site
 
-Préparations nécessaires / Prerequisites:
+### Logging in
 
-- Connectez-vous à votre compte GitHub / Log in to your GitHub account (https://github.com/login)
-- Assurez-vous d'avoir un accès en écriture au dépôt `geomedialab/atlascine-website` / Make sure you have write access to the `geomedialab/atlascine-website` repository.
+1. You need a GitHub account with write access to `geomedialab/geomedialab-website` (ask Sébastien Caquard).
+2. Create a **classic** personal access token at [github.com/settings/tokens](https://github.com/settings/tokens) → *Generate new token (classic)*. Tick the **`repo`** and **`read:user`** scopes, set an expiry, and copy the token.
+3. Go to [geomedialab.org/admin/](https://geomedialab.org/admin/), choose **Sign in with GitHub using token**, and paste it. Your browser remembers it until you log out.
 
-### FR
+### What you can edit
 
-1. Rendez-vous sur [github.com/settings/tokens](https://github.com/settings/tokens) et cliquez sur **Generate new token → Generate new token (classic)**.
-2. Donnez-lui un nom (ex. *atlascine admin*), choisissez une expiration (pour faciliter les choses, sélectionnez aucune date d'expiration), et cochez la case **repo** (accès complet, toutes cases cochées) ainsi que **read:user** plus bas.
-3. Cliquez **Generate token** et copiez le token affiché (il ne sera plus visible après).
-4. Rendez-vous sur [atlascine.org/admin](https://atlascine.org/admin/) et choisissez **Sign in with GitHub using token**.
-5. Collez votre token et validez — vous avez accès à l'interface d'édition.
+| In the admin panel | What it is | Where it shows up |
+|---|---|---|
+| **Projects** | One page per project, with a cover image | The horizontal gallery at the top of the home page. *Gallery position* sets the order (lower first). *Cover focus* picks which part of the image stays visible when the card crops it. |
+| **News** | Short news items: just an image and a title, or a full text post | The column beside *About* on the home page (latest 4), and the News page |
+| **Team** | One entry per person: photo, role, bio, current or alumni | The Team page |
+| **Pages** | Ordinary pages (Publications, Contact, …) | The top menu and/or footer, depending on *Menus* |
+| **Home page** | The About, Partnerships and land acknowledgement text | The left column under the gallery |
 
-### EN
+Text is written in [Markdown](https://www.markdownguide.org/cheat-sheet/). The editor has a toolbar, so you rarely need to type Markdown by hand. Images you upload go into the shared media library and can be reused anywhere. Two or more images placed one after the other, with no blank line between them, are shown side by side.
 
-1. Go to [github.com/settings/tokens](https://github.com/settings/tokens) and click **Generate new token → Generate new token (classic)**.
-2. Give it a name (e.g. *atlascine admin*), choose an expiration, and check **repo** (full access) and **read:user**.
-3. Click **Generate token** and copy the token shown (it won't be visible again).
-4. Go to [atlascine.org/admin](https://atlascine.org/admin/) and choose **Sign in with GitHub using token**.
-5. Paste your token and confirm — you now have access to the editing interface.
+Page addresses come from the title: a project titled *Lake Huron Treaty Atlas* lives at `/en/projects/lake-huron-treaty-atlas/`. Changing a title changes its address.
 
-Each post/page/atlas has EN/FR tabs and is stored in its own subfolder: `<slug>/<slug>.md` (English) and `<slug>/<slug>.fr.md` (French); two files in the same folder are paired as translations automatically. Saving commits to the `11ty-site` branch, which rebuilds the site.
+## Developing
 
-## to edit content
+```sh
+npm ci
+npm start          # dev server with live reload on http://localhost:8080
+npm run build:prod # writes the site to public/
+```
 
-- Find the webpage you want to edit under src/en/ or src/fr/. As you can see, pages are organized into either 'project' or 'pages' subdirectories.
-- Click the pencil icon on the top-right to edit a file.
-  - The edits you make should use [markdown syntax](https://www.markdownguide.org/cheat-sheet/).
-- Once satisfied with your edit, hit *Commit changes...* to save your edits.
+Pushing to `11ty-site` runs `.github/workflows/build-and-deploy.yml`, which builds the site and publishes `public/` to the `gh-pages` branch.
 
-## to create a new page
-
-- Locate where you want to create a new webpage (if in English, navigate to /src/en/, French, /src/fr/).
-- Hit *Add file* > *Create new file*
-- Give it a name with *.md* as its file extension
-- Your page will require frontmatter to be added to the site properly. Frontmatter should be added at the top of the page and looks like this:
-  ```
-  ---
-  layout: 'basic.html'
-  tags: [nav-items, index-pages]
-  translationKey: "about"
-  title: 'About'
-  date: 2023-06-14
-  ---
-  ```
-   - Copy the above frontmatter to the beginning of your new page and modify the following values to your needs:
-     - **tags**: if you would like your new page to appear in the navigation menu at the top of the website, include the *nav-items* tag; if you would like it to appear in the list of footer links, include the *index-pages* tag; if you would like the page to appear in the gallery on the browse-atlases page, include the *projects* tag. If you are including more than one tag, make sure to surround them with square brackets as seen above.
-     - The **translationKey** is used to point two map two translations to each other. For example, the /about page uses the *about* translationKey, as does the /à-propos page. Using the same translationKey makes these pages related to eachother and allows the language buttons to work.
-     - **title** will render as a header at the top of your page by default. It will also be used to generate the url of the page (ex. *À Propos* will turn into the slug */à-propos*).
-     - **date** is optional and can be used to modify the order in which pages appear in either the navigation menu or the pages index.
-- Once you have added the frontmatter, you can also [add some content](#to-edit-content).
-  
+- Content lives in `src/content/{projects,posts,people,pages}/<slug>/<slug>.md`. Each entry needs its own folder, because the CMS expects one. Default tags and layouts come from the `*.json` file in each of those folders.
+- Old addresses from the hand-made site (`team.html`, `cicada.html`, …) keep working through redirect stubs listed in `src/_data/legacyRedirects.json`.
+- Analytics: [geomedialab.goatcounter.com](https://geomedialab.goatcounter.com/).
+- Contact map: MapLibre with the `survey-quiet` style from [basemaps.maphouse.ca](https://basemaps.maphouse.ca/), on keyless OpenFreeMap tiles.
+- The framework is shared with [atlascine.org](https://github.com/geomedialab/atlascine-website) and bum.bike. The site is English-only for now, and French can be switched on later; `src/admin/config.yml` explains how.

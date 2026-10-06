@@ -1,0 +1,18 @@
+{# One card for a news post, used on the landing page and the News page. Expects `post`. #}
+<article class="post-card">
+    {% if post.data.img %}
+    <a class="post-card-img" href="{{ post.url }}" tabindex="-1">
+        <img src="{{ post.data.img | replace(' ', '%20') }}" alt="{{ post.data.alt or '' }}" loading="lazy">
+    </a>
+    {% endif %}
+    <p class="date"><time datetime="{{ post.date | formatDate }}">{{ post.date | longDate }}</time></p>
+    {% if post.data.title %}<h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>{% endif %}
+    {% if post.content | striptags | trim %}
+        {% if post.content | wordcount < 80 %}
+            {{ post.content | safe }}
+        {% else %}
+            {% excerpt post %}
+            <p><a class="read-more" href="{{ post.url }}">Read more</a></p>
+        {% endif %}
+    {% endif %}
+</article>

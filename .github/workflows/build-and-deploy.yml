@@ -4,23 +4,21 @@ on:
   push:
     branches: ['11ty-site']
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: ['22']
-
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '22'
           cache: 'npm'
 
       - name: Install packages
@@ -29,7 +27,11 @@ jobs:
       - name: Run npm build
         run: npm run build:prod
 
+      # Publishes public/ to the gh-pages branch with the workflow's own token
+      # (no deploy key). GitHub Pages serves geomedialab.org from that branch
+      # once Settings → Pages source is set to gh-pages.
       - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

@@ -1,5 +1,5 @@
 <ul>
-{% for p in collections.all %}
+{% for p in collections.all | byOrder %}
 {% if p.data.tags and p.data.tags.includes('index-pages') %}
     {% if p.data.lang == lang %}
         {% if p.data.redirect %}

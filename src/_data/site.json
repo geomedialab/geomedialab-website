@@ -1,13 +1,11 @@
 {
   "title": {
-    "en": "Atlascine",
-    "fr": "Atlascine"
+    "en": "Geomedia Lab"
   },
   "description": {
-    "en": "Atlascine is an online tool for mapping stories",
-    "fr": "Atlascine est un outil en ligne pour cartographier des récits"
+    "en": "The Geomedia Lab at Concordia University (Montreal) explores emerging cartographic practices — mapping stories, memories, film and oral history."
   },
-  "url": "https://atlascine.org",
+  "url": "https://geomedialab.org",
   "baseUrl": "/",
   "date": "Created",
   "lastModified": "Last Modified",
@@ -16,11 +14,16 @@
     {
       "label": "english",
       "code": "en"
-    },
-    {
-      "label": "français",
-      "code": "fr"
     }
   ],
-  "defaultLang": "en"
+  "defaultLang": "en",
+  "goatcounter": "https://geomedialab.goatcounter.com/count",
+  "basemapStyle": "https://basemaps.maphouse.ca/v2/style/survey-quiet.json",
+  "lab": {
+    "name": "Geomedia Lab",
+    "lngLat": [-73.578822, 45.497315],
+    "address": ["H-1260, Henry F. Hall Building", "1455 de Maisonneuve West", "Montreal, QC H3G 1M8, Canada"],
+    "email": "sebastien.caquard@concordia.ca",
+    "phone": "(514) 848-2424 ext. 2052"
+  }
 }

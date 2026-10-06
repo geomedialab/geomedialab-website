@@ -1,0 +1,60 @@
+---
+layout: base.html
+bodyClass: contact
+---
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.5.0/dist/maplibre-gl.css">
+<script src="https://unpkg.com/maplibre-gl@5.5.0/dist/maplibre-gl.js"></script>
+<div class="page contact-page">
+	<h1>{{ title }}</h1>
+	<div class="contact-grid">
+		<div id="map" class="contact-map" role="img" aria-label="Map showing the Geomedia Lab in the Hall Building, downtown Montreal"></div>
+		<div class="contact-card prose">
+			<h2>{{ site.lab.name }}</h2>
+			<address>{% for line in site.lab.address %}{{ line }}<br>{% endfor %}</address>
+			<p><a href="mailto:{{ site.lab.email }}">{{ site.lab.email }}</a><br>
+			<a href="tel:+15148482424,2052">{{ site.lab.phone }}</a></p>
+			{{ content | safe }}
+		</div>
+	</div>
+</div>
+<script>
+(async function () {
+	const lab = {{ site.lab.lngLat | dump | safe }};
+	const styleUrl = {{ site.basemapStyle | dump | safe }};
+	// Fetch the house style ourselves so a symbol-free copy is on hand: a glyph
+	// 404 blanks a MapLibre map, a style with no symbol layers never fetches glyphs.
+	let style = styleUrl, fallback = null;
+	try {
+		style = await (await fetch(styleUrl)).json();
+		fallback = { ...style, layers: style.layers.filter((l) => l.type !== 'symbol') };
+	} catch (e) { /* MapLibre reports the failure itself */ }
+
+	const map = new maplibregl.Map({
+		container: 'map',
+		style,
+		center: lab,
+		zoom: 15,
+		minZoom: 9,
+		maxZoom: 18,
+		cooperativeGestures: true,
+		attributionControl: { compact: true },
+	});
+	map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+
+	let fellBack = false;
+	map.on('error', (e) => {
+		if (fallback && !fellBack && /glyph|style|sprite/i.test(String(e?.error?.message || ''))) {
+			fellBack = true;
+			map.setStyle(fallback);
+		}
+	});
+
+	// lab location as a GeoJSON layer (stays put on zoom, unlike a DOM marker)
+	map.on('style.load', () => {
+		if (map.getSource('lab')) return;
+		map.addSource('lab', { type: 'geojson', data: { type: 'Feature', geometry: { type: 'Point', coordinates: lab }, properties: {} } });
+		map.addLayer({ id: 'lab-halo', type: 'circle', source: 'lab', paint: { 'circle-radius': 16, 'circle-color': '#2f6fb3', 'circle-opacity': 0.18 } });
+		map.addLayer({ id: 'lab-dot', type: 'circle', source: 'lab', paint: { 'circle-radius': 7, 'circle-color': '#2f6fb3', 'circle-stroke-color': '#fff', 'circle-stroke-width': 2 } });
+	});
+})();
+</script>

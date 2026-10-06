@@ -1,20 +1,17 @@
-<!DOCTYPE html>
-<html lang="{{ lang }}" dir="ltr">
-	{% include 'head.html' %}
-	<body>
-		<div class='grid-container'>
-			{% set landingpage = true %}
-			{% include 'navbar.html' %}
-			<div id="landing-content" class="vertical-centre">
-				{{ content | safe }}
-			</div>
-			{% include 'image.html' %}
-			{% include 'posts.html' %}
-			<div id="gallery-content">
-				{% include 'tile-gallery.html' %}
-			</div>
-		</div>
-		{% include 'footer.html' %}
-	</body>
-
-</html>
+---
+layout: base.html
+bodyClass: landing
+---
+{% include 'tile-gallery.html' %}
+<div class="landing-columns">
+	<section class="landing-about prose">
+		{{ content | safe }}
+	</section>
+	<aside class="landing-news" aria-labelledby="news-heading">
+		<h2 id="news-heading">News</h2>
+		{% set postLimit = 4 %}
+		{% include 'posts.html' %}
+		{% set newsPage = (collections.all | forLang(lang) | selectattr("data.layout", "equalto", "posts-overview.html") | first) %}
+		{% if newsPage %}<p><a class="read-more" href="{{ newsPage.url }}">All news</a></p>{% endif %}
+	</aside>
+</div>

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}" dir="ltr">
+	{% include 'head.html' %}
+	<body class="{{ bodyClass }}">
+		{% include 'navbar.html' %}
+		<main id="main">
+			{{ content | safe }}
+		</main>
+		{% include 'footer.html' %}
+	</body>
+</html>
