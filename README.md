@@ -1,8 +1,8 @@
+To edit the site you need to be a member of the [geomedialab GitHub organisation](https://github.com/geomedialab): **ask an existing member of the org to give you access.**
+
 # geomedialab-website
 
 ## ✏️ Modifier le site via l'interface d'administration / Edit the site via the admin interface
-
-To edit the site you need to be a member of the [geomedialab GitHub organisation](https://github.com/geomedialab): **ask an existing member of the org to give you access.**
 
 Préparations nécessaires / Before you start:
 
