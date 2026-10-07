@@ -1,0 +1,20 @@
+{
+  "brandSub": { "en": "Concordia University · Montreal", "fr": "Université Concordia · Montréal" },
+  "news": { "en": "News", "fr": "Nouvelles" },
+  "allNews": { "en": "All news", "fr": "Toutes les nouvelles" },
+  "noNews": { "en": "No news yet.", "fr": "Aucune nouvelle pour l'instant." },
+  "readMore": { "en": "Read more", "fr": "Lire la suite" },
+  "currentMembers": { "en": "Current members", "fr": "Membres actuels" },
+  "pastMembers": { "en": "Past members", "fr": "Anciens membres" },
+  "bio": { "en": "Bio", "fr": "Bio" },
+  "visitProject": { "en": "Visit the project", "fr": "Voir le projet" },
+  "prevProject": { "en": "Previous project", "fr": "Projet précédent" },
+  "nextProject": { "en": "Next project", "fr": "Projet suivant" },
+  "projects": { "en": "Projects", "fr": "Projets" },
+  "menuOpen": { "en": "Open menu", "fr": "Ouvrir le menu" },
+  "menuClose": { "en": "Close menu", "fr": "Fermer le menu" },
+  "department": { "en": "Department of Geography, Planning and Environment", "fr": "Département de géographie, urbanisme et environnement" },
+  "university": { "en": "Concordia University, Tiohtià:ke / Montreal", "fr": "Université Concordia, Tiohtià:ke / Montréal" },
+  "logoBy": { "en": "Logo by", "fr": "Logo par" },
+  "mapLabel": { "en": "Map showing the Geomedia Lab in the Hall Building, downtown Montreal", "fr": "Carte situant le Geomedia Lab dans le pavillon Hall, au centre-ville de Montréal" }
+}

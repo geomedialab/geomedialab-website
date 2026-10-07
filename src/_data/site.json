@@ -1,9 +1,11 @@
 {
   "title": {
-    "en": "Geomedia Lab"
+    "en": "Geomedia Lab",
+    "fr": "Geomedia Lab"
   },
   "description": {
-    "en": "The Geomedia Lab at Concordia University (Montreal) explores emerging cartographic practices — mapping stories, memories, film and oral history."
+    "en": "The Geomedia Lab at Concordia University (Montreal) explores emerging cartographic practices — mapping stories, memories, film and oral history.",
+    "fr": "Le Geomedia Lab de l'Université Concordia (Montréal) explore les pratiques cartographiques émergentes — cartographie des récits, des mémoires, du cinéma et de l'histoire orale."
   },
   "url": "https://geomedialab.org",
   "baseUrl": "/",
@@ -14,6 +16,10 @@
     {
       "label": "english",
       "code": "en"
+    },
+    {
+      "label": "français",
+      "code": "fr"
     }
   ],
   "defaultLang": "en",
@@ -21,8 +27,15 @@
   "basemapStyle": "https://basemaps.maphouse.ca/v2/style/survey-quiet.json",
   "lab": {
     "name": "Geomedia Lab",
-    "lngLat": [-73.578822, 45.497315],
-    "address": ["H-1260, Henry F. Hall Building", "1455 de Maisonneuve West", "Montreal, QC H3G 1M8, Canada"],
+    "lngLat": [
+      -73.578822,
+      45.497315
+    ],
+    "address": [
+      "H-1260, Henry F. Hall Building",
+      "1455 de Maisonneuve West",
+      "Montreal, QC H3G 1M8, Canada"
+    ],
     "email": "sebastien.caquard@concordia.ca",
     "phone": "(514) 848-2424 ext. 2052"
   }

@@ -5,12 +5,25 @@ layout: base.html
 	<h1>{{ title }}</h1>
 	{% if content | striptags | trim %}<div class="prose">{{ content | safe }}</div>{% endif %}
 	{% set people = collections.team | forLang(lang) %}
-	<h2>Current members</h2>
+	<h2>{{ i18n.currentMembers[lang] }}</h2>
 	<div class="people-grid">
 		{% for person in people %}{% if person.data.status != "alumni" %}{% include 'person-card.html' %}{% endif %}{% endfor %}
 	</div>
-	<h2>Past members</h2>
+	<h2>{{ i18n.pastMembers[lang] }}</h2>
 	<div class="people-grid">
 		{% for person in people %}{% if person.data.status == "alumni" %}{% include 'person-card.html' %}{% endif %}{% endfor %}
 	</div>
 </div>
+<script>
+	// As on the original team page: clicking a person opens their bio, closes any
+	// other, and fades everyone else; clicking the open one again resets.
+	document.querySelectorAll('.team .person-toggle:not([disabled])').forEach((btn) => {
+		btn.addEventListener('click', () => {
+			const team = btn.closest('.team');
+			const opening = btn.getAttribute('aria-expanded') !== 'true';
+			team.querySelectorAll('.person-toggle[aria-expanded]').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+			btn.setAttribute('aria-expanded', String(opening));
+			team.classList.toggle('has-open', opening);
+		});
+	});
+</script>

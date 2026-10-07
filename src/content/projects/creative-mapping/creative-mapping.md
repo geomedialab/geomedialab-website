@@ -11,8 +11,3 @@ Let's get lost is an experimental short film on a different quality of mapping. 
 <iframe src="https://player.vimeo.com/video/1020896626?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allowfullscreen=""></iframe>
 
 This video presents the sensibility maps designed by Élise Olmedo - a researcher and a sensibility mapper - with Emmanuelle Kanyiganwa. Emmanuelle Kayiganwa is a survivor of the 1994 genocide against the Tutsi in Rwanda. She shared her life story in 2009 in a three-hour interview as part of the ‘Montreal Life Stories’ research project. Based on this story, Élise co-created with Emmanuelle a series of sensibility maps that were showcased during two exhibitions entitled "Mapping Memories" (Montreal 2023 & Kigali 2024). This video presents the part of the exhibition dedicated to sensibility mapping that took place in Montreal in 2023.
-
-Geomedia Lab
-
-Logo by [+JuliaMia Grafik+](http://juliamia.ch/index_en)
-Website by [Emory Shaw](https://twitter.com/EmoryShaw)

@@ -1,29 +1,12 @@
-{# Horizontal project strip. One card builder for every gallery on the site. #}
-<section class="project-gallery" aria-label="Projects">
-    <div class="gallery-head">
-        <h2>Projects</h2>
-        <div class="gallery-arrows">
-            <button type="button" data-dir="-1" aria-label="Scroll projects left">&lsaquo;</button>
-            <button type="button" data-dir="1" aria-label="Scroll projects right">&rsaquo;</button>
-        </div>
-    </div>
-    <div class="tile-gallery" tabindex="0">
-    {% for p in collections.gallery | forLang(lang) %}
-        <a class="project-card" href="{{ p.data.redirect or p.url }}">
-            <span class="project-card-img">
-                {% if p.data.img %}<img src="{{ p.data.img | replace(' ', '%20') }}" alt="" loading="lazy" style="object-position: {{ p.data.focus or '50% 50%' }}">{% endif %}
-            </span>
-            <span class="project-card-title">{{ p.data.title }}</span>
-            {% if p.data.years %}<span class="project-card-years">{{ p.data.years }}</span>{% endif %}
-        </a>
-    {% endfor %}
-    </div>
-</section>
-<script>
-    (function () {
-        const strip = document.currentScript.previousElementSibling.querySelector('.tile-gallery');
-        document.currentScript.previousElementSibling.querySelectorAll('.gallery-arrows button').forEach((b) =>
-            b.addEventListener('click', () => strip.scrollBy({ left: b.dataset.dir * strip.clientWidth * 0.8, behavior: 'smooth' }))
-        );
-    })();
-</script>
+{# Horizontal project strip: a plain overflow-x scroller, as on the original site. #}
+<div class="tile-gallery" role="region" aria-label="{{ i18n.projects[lang] }}">
+{% for p in collections.gallery | forLang(lang) %}
+    <a class="project-card" href="{{ p.data.redirect or p.url }}">
+        <span class="project-card-img">
+            {% if p.data.img %}<img src="{{ p.data.img | replace(' ', '%20') }}" alt="" loading="lazy" style="object-position: {{ p.data.focus or '50% 50%' }}">{% endif %}
+        </span>
+        <span class="project-card-title">{{ p.data.title }}</span>
+        {% if p.data.years %}<span class="project-card-years">{{ p.data.years }}</span>{% endif %}
+    </a>
+{% endfor %}
+</div>

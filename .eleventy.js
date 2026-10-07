@@ -78,8 +78,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("formatDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toISODate();
   });
-  eleventyConfig.addFilter("longDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('d LLLL yyyy');
+  eleventyConfig.addFilter("longDate", (dateObj, lang = "en") => {
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).setLocale(lang).toFormat('d LLLL yyyy');
   });
 
   // items with an `order` field come first (ascending), the rest keep date order
@@ -104,7 +104,8 @@ module.exports = function (eleventyConfig) {
     const all = api.getAll();
     const list = all[0]?.data.legacyRedirects || [];
     return list.map(({ from, folder }) => {
-      const target = all.find((p) => p.inputPath.includes(`/content/${folder}/`));
+      const inFolder = all.filter((p) => p.inputPath.includes(`/content/${folder}/`));
+      const target = inFolder.find((p) => p.data.lang === p.data.site.defaultLang) || inFolder[0];
       if (!target) throw new Error(`legacyRedirects: nothing in src/content/${folder}/`);
       return { from, to: target.url };
     });

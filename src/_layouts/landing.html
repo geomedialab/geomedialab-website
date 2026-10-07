@@ -8,10 +8,10 @@ bodyClass: landing
 		{{ content | safe }}
 	</section>
 	<aside class="landing-news" aria-labelledby="news-heading">
-		<h2 id="news-heading">News</h2>
+		<h2 id="news-heading">{{ i18n.news[lang] }}</h2>
 		{% set postLimit = 4 %}
 		{% include 'posts.html' %}
 		{% set newsPage = (collections.all | forLang(lang) | selectattr("data.layout", "equalto", "posts-overview.html") | first) %}
-		{% if newsPage %}<p><a class="read-more" href="{{ newsPage.url }}">All news</a></p>{% endif %}
+		{% if newsPage %}<p><a class="read-more" href="{{ newsPage.url }}">{{ i18n.allNews[lang] }}</a></p>{% endif %}
 	</aside>
 </div>

@@ -2,7 +2,7 @@
 layout: base.html
 ---
 <article class="prose page post">
-	<p class="date"><time datetime="{{ page.date | formatDate }}">{{ page.date | longDate }}</time></p>
+	<p class="date"><time datetime="{{ page.date | formatDate }}">{{ page.date | longDate(lang) }}</time></p>
 	{% if title %}<h1>{{ title }}</h1>{% endif %}
 	{% if img %}<img class="post-img" src="{{ img | replace(' ', '%20') }}" alt="{{ alt or '' }}">{% endif %}
 	{{ content | main | safe }}

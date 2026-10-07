@@ -2,6 +2,6 @@
 title: "Marie Lavorel"
 photo: "/imgs/people/lavorel.jpg"
 status: alumni
-order: 180
+order: 330
 ---
 Dr. Marie Lavorel holds a Ph.D in Museology, Mediation & Heritage from Université du Québec à Montréal (UQÀM) and Information et Communication Sciences from Université d’Avignon et des pays de Vaucluse in France. Her research focuses on the making of Heritage from sensitive and traumatic memories, the writing of contemporary history, oral history, contemporary art and dance, public art and contemporary architecture. She is interested in creative processes and media writing of memory, heritage, exhibition and art. Moreover, Dr. Lavorel is interested in the collaborative dimension of these processes and the commitment of the actors involved. She also studies the way knowledge is publicized through new digital and interactive platforms. At McGill University, she has recently completed a postdoctoral research on public art in hospitals. She is now preparing an exhibition that will combine contemporary dance and media arts in an interactive installation. At the same time, she accompanies contemporary artists through writing and curatorial projects. She is also a freelance curator and teaches Museology at UQÀM. She is currently Postdoctoral Fellow at Concordia University (COHDS and Geomedialab) where she is centrally involved into the development of the Living Archives of the Rwandan exiles and Genocide Survivors in Canada.

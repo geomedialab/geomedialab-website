@@ -2,5 +2,5 @@
 {% for post in collections.post | reverse | forLang(lang) | head(postLimit) %}
     {% include 'post-card.html' %}
 {% else %}
-    <p class="empty">No news yet.</p>
+    <p class="empty">{{ i18n.noNews[lang] }}</p>
 {% endfor %}

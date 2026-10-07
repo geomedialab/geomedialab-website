@@ -1,14 +1,19 @@
-{# One card per team member. Expects `person`. #}
+{# One card per team member. Expects `person`. Clicking the photo or name opens the bio (see team.html). #}
+{% set hasBio = person.content | striptags | trim %}
 <article class="person-card">
-    <div class="person-photo">
-        {% if person.data.photo %}<img src="{{ person.data.photo | replace(' ', '%20') }}" alt="" loading="lazy">{% endif %}
+    <button type="button" class="person-toggle" {% if hasBio %}aria-expanded="false"{% else %}disabled{% endif %}>
+        <span class="person-photo">
+            {% if person.data.photo %}<img src="{{ person.data.photo | replace(' ', '%20') }}" alt="" loading="lazy">{% endif %}
+        </span>
+        <span class="person-name">{{ person.data.title }}</span>
+        {% if person.data.role %}<span class="person-role">{{ person.data.role }}</span>{% endif %}
+    </button>
+    {% if hasBio %}
+    <div class="person-bio">
+        <div>
+            {{ person.content | safe }}
+            {% if person.data.link %}<p><a href="{{ person.data.link }}">{{ person.data.link | replace('https://', '') | replace('http://', '') }}</a></p>{% endif %}
+        </div>
     </div>
-    <h3>{% if person.data.link %}<a href="{{ person.data.link }}">{{ person.data.title }}</a>{% else %}{{ person.data.title }}{% endif %}</h3>
-    {% if person.data.role %}<p class="person-role">{{ person.data.role }}</p>{% endif %}
-    {% if person.content | striptags | trim %}
-    <details>
-        <summary>Bio</summary>
-        {{ person.content | safe }}
-    </details>
     {% endif %}
 </article>

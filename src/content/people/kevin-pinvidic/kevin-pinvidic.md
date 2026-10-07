@@ -2,6 +2,6 @@
 title: "Kévin Pinvidic"
 photo: "/imgs/people/pinvidic.jpg"
 status: current
-order: 50
+order: 120
 ---
 Kevin Pinvidic is a multidisciplinary artist based in Tiohtiá:ke/Montreal. His process focuses on the experience of the city and its appropriation by its citizens through the lens of urban planning. First encompassing painting and drawing, Pinvidic repurposed architectural representations such as plans, models or digital softwares to transpose his own wandering in the city. During his MFA, he then pushed the idea of the whole city as his own studio, which gave shape to scenographies where residual matters and theatre elements, such as lights and projections, were assembled in site-specific works. Pinvidic now explores the multiple crossroads between scenography, urban studies, geography, and computation arts in a performative and collaborative method with citizens. For this purpose, he joined the Geomedia Lab to add collective and participative mapping (tools and methodology) to his performative exploration of the city. Trained in design and architecture (Ecole Boulle, Paris, 2008, National School of Architecture of Versailles, 2010), Pinvidic has then graduated with a Master of Fine Arts from UQÀM university in 2015. He is currently a Ph.D candidate at Concordia University (INDI program). Complementary to his artistic practice, Pinvidic collaborates in creation research groups and works in the field of scenography for performing arts.

@@ -5,14 +5,17 @@
         <img src="{{ post.data.img | replace(' ', '%20') }}" alt="{{ post.data.alt or '' }}" loading="lazy">
     </a>
     {% endif %}
-    <p class="date"><time datetime="{{ post.date | formatDate }}">{{ post.date | longDate }}</time></p>
+    <p class="date"><time datetime="{{ post.date | formatDate }}">{{ post.date | longDate(lang) }}</time></p>
     {% if post.data.title %}<h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>{% endif %}
     {% if post.content | striptags | trim %}
         {% if post.content | wordcount < 80 %}
             {{ post.content | safe }}
+        {% elif post.data.description %}
+            <p>{{ post.data.description }}</p>
+            <p><a class="read-more" href="{{ post.url }}">{{ i18n.readMore[lang] }}</a></p>
         {% else %}
             {% excerpt post %}
-            <p><a class="read-more" href="{{ post.url }}">Read more</a></p>
+            <p><a class="read-more" href="{{ post.url }}">{{ i18n.readMore[lang] }}</a></p>
         {% endif %}
     {% endif %}
 </article>

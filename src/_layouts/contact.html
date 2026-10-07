@@ -7,7 +7,7 @@ bodyClass: contact
 <div class="page contact-page">
 	<h1>{{ title }}</h1>
 	<div class="contact-grid">
-		<div id="map" class="contact-map" role="img" aria-label="Map showing the Geomedia Lab in the Hall Building, downtown Montreal"></div>
+		<div id="map" class="contact-map" role="img" aria-label="{{ i18n.mapLabel[lang] }}"></div>
 		<div class="contact-card prose">
 			<h2>{{ site.lab.name }}</h2>
 			<address>{% for line in site.lab.address %}{{ line }}<br>{% endfor %}</address>

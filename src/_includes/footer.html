@@ -2,16 +2,14 @@
     <div class="footer-inner">
         <div class="footer-lab">
             <p><strong>Geomedia Lab</strong><br>
-            Department of Geography, Planning and Environment<br>
-            Concordia University, Tiohtià:ke / Montreal</p>
-            {% if site.languages.length > 1 %}{% include 'lang-switcher.html' %}{% endif %}
+            {{ i18n.department[lang] }}<br>
+            {{ i18n.university[lang] }}</p>
         </div>
         <nav class="index" aria-label="Site">
             {% include 'list-index-pages.html' %}
         </nav>
         <div class="footer-credits">
-            <p>Logo by <a href="http://juliamia.ch/index_en">+JuliaMia Grafik+</a></p>
-            <p><a href="/admin/">Editor login</a></p>
+            <p>{{ i18n.logoBy[lang] }} <a href="http://juliamia.ch/index_en">+JuliaMia Grafik+</a></p>
         </div>
     </div>
 </footer>

@@ -34,8 +34,3 @@ Geomedia and the Geoweb is a course conceived at Concordia University by Sébast
 -   Sébastien Caquard
 -   Tom McGurk
 -   Léa Denieul
-
-Geomedia Lab
-
-Logo by [+JuliaMia Grafik+](http://juliamia.ch/index_en)
-Website by [Emory Shaw](https://twitter.com/EmoryShaw)

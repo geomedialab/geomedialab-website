@@ -1,19 +1,18 @@
 ---
 layout: base.html
 ---
-{% set prevProject = collections.gallery | getPreviousCollectionItem %}
-{% set nextProject = collections.gallery | getNextCollectionItem %}
-<article class="prose page project">
-	<header class="project-header">
-		<h1>{{ title }}</h1>
-		{% if years %}<p class="project-years">{{ years }}</p>{% endif %}
-		{% if redirect %}<p><a class="read-more" href="{{ redirect }}">Visit the project</a></p>{% endif %}
-	</header>
-	{{ content | main | safe }}
-</article>
-{% if prevProject or nextProject %}
-<nav class="project-pager" aria-label="More projects">
-	{% if prevProject %}<a rel="prev" href="{{ prevProject.url }}">&lsaquo; {{ prevProject.data.title }}</a>{% else %}<span></span>{% endif %}
-	{% if nextProject %}<a rel="next" href="{{ nextProject.url }}">{{ nextProject.data.title }} &rsaquo;</a>{% endif %}
-</nav>
-{% endif %}
+{% set siblings = collections.gallery | forLang(lang) %}
+{% set prevProject = siblings | getPreviousCollectionItem %}
+{% set nextProject = siblings | getNextCollectionItem %}
+<div class="project-frame">
+	{% if prevProject %}<a class="project-arrow" rel="prev" href="{{ prevProject.url }}" aria-label="{{ i18n.prevProject[lang] }}: {{ prevProject.data.title }}">&lsaquo;</a>{% else %}<span class="project-arrow"></span>{% endif %}
+	<article class="prose page project">
+		<header class="project-header">
+			<h1>{{ title }}</h1>
+			{% if years %}<p class="project-years">{{ years }}</p>{% endif %}
+			{% if redirect %}<p><a class="read-more" href="{{ redirect }}">{{ i18n.visitProject[lang] }}</a></p>{% endif %}
+		</header>
+		{{ content | main | safe }}
+	</article>
+	{% if nextProject %}<a class="project-arrow" rel="next" href="{{ nextProject.url }}" aria-label="{{ i18n.nextProject[lang] }}: {{ nextProject.data.title }}">&rsaquo;</a>{% else %}<span class="project-arrow"></span>{% endif %}
+</div>
