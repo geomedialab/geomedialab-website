@@ -226,8 +226,21 @@ h3 { font-size: 1.15rem; margin: 1.5rem 0 0.5rem; }
 .person-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; display: block; }
 .person-name { display: block; margin: 0.6rem 0 0.1rem; font-size: 1.05rem; font-weight: 700; color: var(--slate); }
 .person-role { display: block; }
-/* bio slides open below the card */
-.person-bio { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s ease; }
+/* bio slides open below the card, over the cards beneath it (out of flow, so
+   the row never changes height) */
+.person-card { position: relative; }
+.person-bio {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	background: var(--bg);
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.4s ease;
+}
+.person-toggle[aria-expanded="true"] + .person-bio { padding-bottom: 1rem; }
 .person-bio > div { overflow: hidden; font-size: 0.95rem; visibility: hidden; transition: visibility 0.4s; }
 .person-toggle[aria-expanded="true"] + .person-bio { grid-template-rows: 1fr; }
 .person-toggle[aria-expanded="true"] + .person-bio > div { visibility: visible; }
