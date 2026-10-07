@@ -281,3 +281,7 @@ h3 { font-size: 1.15rem; margin: 1.5rem 0 0.5rem; }
 .lang-selector a[href] { color: var(--blue); }
 .lang-selector a[href]:hover { text-decoration: underline; }
 .post-card .more { text-decoration: none; white-space: nowrap; }
+.post-card[data-href] { cursor: pointer; }
+.post-card:hover h3 a { color: var(--blue); }
+/* jumping from the landing page lands the card just under the sticky header */
+.post-card { scroll-margin-top: 5.5rem; }

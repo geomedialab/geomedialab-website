@@ -10,9 +10,8 @@ bodyClass: landing
 	<aside class="landing-news" aria-labelledby="news-heading">
 		<h2 id="news-heading">{{ i18n.news[lang] }}</h2>
 		{% set postLimit = 4 %}
+		{% set postWordLimit = 80 %}
+		{% set newsUrl = collections.all | layoutUrl('posts-overview.html', lang) %}
 		{% include 'posts.html' %}
-		{% for p in collections.all | forLang(lang) %}{% if p.data.layout == "posts-overview.html" and p.data.lang == lang %}
-		<p><a class="read-more" href="{{ p.url }}">{{ i18n.allNews[lang] }}</a></p>
-		{% endif %}{% endfor %}
 	</aside>
 </div>

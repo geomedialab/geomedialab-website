@@ -1,5 +1,7 @@
-{# News feed: latest `postLimit` posts (all when unset), newest first. #}
+{# News feed: latest `postLimit` posts (all when unset), newest first.
+   With `newsUrl` set (landing page) cards lead to that page at the post; otherwise to the post. #}
 {% for post in collections.post | reverse | forLang(lang) | head(postLimit) %}
+    {% set cardHref = (newsUrl + "#" + post.data.titleSlug) if newsUrl else post.url %}
     {% include 'post-card.html' %}
 {% else %}
     <p class="empty">{{ i18n.noNews[lang] }}</p>

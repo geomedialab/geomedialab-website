@@ -1,20 +1,22 @@
-{# One card for a news post, used on the landing page and the News page. Expects `post`. #}
-<article class="post-card">
+{# One card for a news post, used on the landing page and the News page. Expects `post` and `cardHref`.
+   As on bum.bike/atlascine: on the landing page the whole card leads to the News page, scrolled to
+   this item; on the News page it leads to the post itself. #}
+<article class="post-card" id="{{ post.data.titleSlug }}" data-href="{{ cardHref }}">
     {% if post.data.img %}
-    <a class="post-card-img" href="{{ post.url }}" tabindex="-1">
+    <a class="post-card-img" href="{{ cardHref }}" tabindex="-1">
         <img src="{{ post.data.img | replace(' ', '%20') }}" alt="{{ post.data.alt or '' }}" loading="lazy">
     </a>
     {% endif %}
     <p class="date"><time datetime="{{ post.date | formatDate }}">{{ post.date | longDate(lang) }}</time></p>
-    {% if post.data.title %}<h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>{% endif %}
+    {% if post.data.title %}<h3><a href="{{ cardHref }}">{{ post.data.title }}</a></h3>{% endif %}
     {% if post.content | striptags | trim %}
-        {% if post.content | wordcount < 80 %}
+        {% if post.content | wordcount < postWordLimit %}
             {{ post.content | safe }}
         {% elif post.data.description %}
-            <p>{{ post.data.description }} <a class="more" href="{{ post.url }}" aria-label="{{ i18n.readMore[lang] }}">[...]</a></p>
+            <p>{{ post.data.description }} <a class="more" href="{{ cardHref }}" aria-label="{{ i18n.readMore[lang] }}">[...]</a></p>
         {% else %}
             {% set excerptHtml %}{% excerpt post %}{% endset %}
-            {{ excerptHtml | replace(' [...]</p>', ' <a class="more" href="' + post.url + '" aria-label="' + i18n.readMore[lang] + '">[...]</a></p>') | safe }}
+            {{ excerptHtml | replace(' [...]</p>', ' <a class="more" href="' + cardHref + '" aria-label="' + i18n.readMore[lang] + '">[...]</a></p>') | safe }}
         {% endif %}
     {% endif %}
 </article>

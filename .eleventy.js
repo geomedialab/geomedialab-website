@@ -90,6 +90,10 @@ module.exports = function (eleventyConfig) {
     (items || []).filter((p) => p.data.lang === lang || p.data.translationKey === false)
   );
   eleventyConfig.addFilter("head", (items, n) => (n ? items.slice(0, n) : items));
+  // url of the page using `layout` in `lang` (e.g. the News page), '' if none
+  eleventyConfig.addFilter("layoutUrl", (items, layout, lang) =>
+    ((items || []).find((p) => p.data.layout === layout && p.data.lang === lang) || {}).url || ""
+  );
 
   // project gallery: everything tagged projects, minus `gallery: false`
   eleventyConfig.addCollection("gallery", (api) =>
