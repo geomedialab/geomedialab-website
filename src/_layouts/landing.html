@@ -11,7 +11,8 @@ bodyClass: landing
 		<h2 id="news-heading">{{ i18n.news[lang] }}</h2>
 		{% set postLimit = 4 %}
 		{% include 'posts.html' %}
-		{% set newsPage = (collections.all | forLang(lang) | selectattr("data.layout", "equalto", "posts-overview.html") | first) %}
-		{% if newsPage %}<p><a class="read-more" href="{{ newsPage.url }}">{{ i18n.allNews[lang] }}</a></p>{% endif %}
+		{% for p in collections.all | forLang(lang) %}{% if p.data.layout == "posts-overview.html" and p.data.lang == lang %}
+		<p><a class="read-more" href="{{ p.url }}">{{ i18n.allNews[lang] }}</a></p>
+		{% endif %}{% endfor %}
 	</aside>
 </div>

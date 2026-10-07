@@ -11,11 +11,10 @@
         {% if post.content | wordcount < 80 %}
             {{ post.content | safe }}
         {% elif post.data.description %}
-            <p>{{ post.data.description }}</p>
-            <p><a class="read-more" href="{{ post.url }}">{{ i18n.readMore[lang] }}</a></p>
+            <p>{{ post.data.description }} <a class="more" href="{{ post.url }}" aria-label="{{ i18n.readMore[lang] }}">[...]</a></p>
         {% else %}
-            {% excerpt post %}
-            <p><a class="read-more" href="{{ post.url }}">{{ i18n.readMore[lang] }}</a></p>
+            {% set excerptHtml %}{% excerpt post %}{% endset %}
+            {{ excerptHtml | replace(' [...]</p>', ' <a class="more" href="' + post.url + '" aria-label="' + i18n.readMore[lang] + '">[...]</a></p>') | safe }}
         {% endif %}
     {% endif %}
 </article>
