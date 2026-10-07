@@ -15,6 +15,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // whole news card is clickable; links inside it keep their own target
+    document.querySelectorAll('.post-card[data-href]').forEach((card) => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('a') || window.getSelection().toString()) return;
+            window.location.href = card.dataset.href;
+        });
+    });
+
     // external links open in a new tab
     document.querySelectorAll('a[href]').forEach(function (link) {
         if (link.hostname && link.hostname !== window.location.hostname) {
