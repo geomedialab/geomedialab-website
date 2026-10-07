@@ -198,11 +198,13 @@ h3 { font-size: 1.15rem; margin: 1.5rem 0 0.5rem; }
 
 .people-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+	/* 4 across like the original team page, so the order reads row by row */
+	grid-template-columns: repeat(4, minmax(0, 1fr));
 	gap: 1.75rem 1.25rem;
 	align-items: start;
 }
 .person-card h3 { margin: 0.6rem 0 0.1rem; font-size: 1.05rem; }
+@media (max-width: 860px) { .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .person-card h3 a { color: inherit; text-decoration: none; }
 .person-photo { aspect-ratio: 1; overflow: hidden; border-radius: var(--radius); background: var(--bg-soft); }
 .person-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; }
