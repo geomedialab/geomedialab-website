@@ -33,11 +33,11 @@ bodyClass: contact
 		container: 'map',
 		style,
 		center: lab,
-		zoom: 15,
+		zoom: 13,
 		minZoom: 9,
 		maxZoom: 18,
 		cooperativeGestures: true,
-		attributionControl: { compact: true },
+		attributionControl: { compact: true, customAttribution: 'Design @maphouse' },
 	});
 	map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
 
